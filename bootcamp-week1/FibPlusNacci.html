@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fib() {
+            // Init some variables here
+            let firstNum = 0;
+            let secondNum = 1;
+            let fibSeqIndex = 1;
+            console.log('Fib Plus Nacci has been instantiated!');
+            console.log(`${fibSeqIndex} : ${firstNum}`);
+            fibSeqIndex += 1;
+            console.log(`${fibSeqIndex} : ${secondNum}`);
+            function nacci() {
+                fibSeqIndex += 1;
+                console.log(`${fibSeqIndex} : ${secondNum + firstNum}`);
+                secondNum = secondNum + firstNum;
+                firstNum = secondNum - firstNum;
+            }
+            return nacci
+        }
+        var fibCounter = fib(); // Logs the first and second variables of the sequence.
+
+        fibCounter() // should console.log "3 : 1"
+        fibCounter() // should console.log "4 : 2"
+        fibCounter() // should console.log "5 : 3"
+        fibCounter() // should console.log "6 : 5"
+        fibCounter() // should console.log "7 : 8"
+        fibCounter() // should console.log "8 : 13"
+        fibCounter() // should console.log "9 : 21"
+    </script>
+</body>
+
+</html>

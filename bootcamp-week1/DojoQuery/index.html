@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DojoQuery</title>
+</head>
+
+<body>
+    <div>
+        <button id="someIdForSomeButton1">Button W. Click Attached by $DojoOne</button>
+        <button id="someOtherIdForSomeOtherButton1">Button W. Hover Attached by $DojoOne</button>
+    </div>
+    <div>
+        <button id="someIdForSomeButton2">Button W. Click Attached by $Dojo</button>
+        <button id="someOtherIdForSomeOtherButton2">Button W. Hover Attached by $Dojo</button>
+    </div>
+</body>
+<script src="DojoQuery.js"></script>
+<script src="DojoQuery_I.js"></script>
+<script>
+
+    $DojoOne("someIdForSomeButton1").click(function () { console.log("The button was clicked!") });
+    $DojoOne("someOtherIdForSomeOtherButton1").hover(function () { console.log("The button was hovered on!") });
+//$Dojo();
+//$Dojo().click();
+//console.log($Dojo);
+    /*
+    */
+</script>
+
+</html>
