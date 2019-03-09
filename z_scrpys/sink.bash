@@ -1,0 +1,3 @@
+git pull --all
+
+// ToDo: Find the porcelain...
