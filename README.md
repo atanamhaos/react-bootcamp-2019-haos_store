@@ -19,6 +19,10 @@ Setup Keyboard Shortcuts on Chrome OS
 https://www.addictivetips.com/web/disable-a-chrome-keyboard-shortcut/
 
 
+#### Browser Dumps
+
+* [The real HTML5 boilerplate – CSS Wizardry – CSS Architecture, Web Performance Optimisation, and more, by Harry Roberts](https://csswizardry.com/2011/01/the-real-html5-boilerplate/)
+
 
 
 
