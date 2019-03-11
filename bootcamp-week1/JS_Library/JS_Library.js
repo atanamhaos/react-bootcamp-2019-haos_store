@@ -54,32 +54,61 @@ Each method’s functionality is described here: underscore.js.
 Note that your method does not have to be as robust as underscore’s you just need to get the base functionality working. Therefore for most methods, you will only have the array and a callback as parameters and for the callback, you will pass in each element and potentially a “memo” also known as a “collector”.
 */
 
+(function (window) {
+  window.haos_ = function () {
+    return {
+      
+      map: function (arr, callback) {
+        var returnArr = [];
 
-var _ = {
-    map: function() {
-      //code here;
-    },
-    reduce: function() { 
-      // code here;
-    },
-    find: function() {   
-      // code here;
-    },
-    filter: function(arr, callback) { 
-      // code here;
-      var returnArr = [];
-      for (var i = 0; i < arr.length; i++){
-       if (callback(arr[i])){
-            returnArr.push(arr[i]);
+        for (var i = 0; i < arr.length; i++) {
+          returnArr.push(callback(arr[i]));
         }
-      }
-      return returnArr;
-    },
-    reject: function() { 
-      // code here;
-    }
-  }
+        return returnArr;
+      },
 
-var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+      reduce: function (arr, callback) {
+        var returnValue = callback(arr[0], arr[1]);
 
-console.log(evens); // if things are working right, this will return [2,4,6].
+        for (var i = 2; i < arr.length; i++) {
+          returnValue = callback(returnValue, arr[i]);
+        }
+        return returnValue;
+      },
+
+      find: function (arr, callback) {
+        var returnValue = callback(arr[0], arr[1]);
+        var i = 0;
+        while (!callback(arr[i]) && i < arr.length) {
+          i++;
+        }
+
+        if (i < arr.length) {
+          return arr[i];
+        } else {
+          return null;
+        }
+      },
+      
+      filter: function (arr, callback) {
+        var returnArr = [];
+        for (var i = 0; i < arr.length; i++) {
+          if (callback(arr[i])) {
+            returnArr.push(arr[i]);
+          }
+        }
+        return returnArr;
+      },
+
+      reject: function (arr, callback) {
+        var returnArr = [];
+        for (var i = 0; i < arr.length; i++) {
+          if (!callback(arr[i])) {
+            returnArr.push(arr[i]);
+          }
+        }
+        return returnArr;
+      }  
+    };
+  };
+})(window);
