@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ninjaman</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div id="world"></div>
+  <div id="ninjaman"></div>
+  <div class="scoreBoard">
+    <ul>
+      <li>
+        <div id="score"></div>
+      </li>
+      <li>
+        <div id="lives"></div>
+      </li>
+    </ul>
+  </div>
+</body>
+<script type="text/javascript">
+  //Draws the map
+  function drawRandom() {
+    var num = Math.floor(Math.random() * 100);
+    if (num < 10) {
+      return 0;
+    } else if (num >= 10 && num <= 70) {
+      return 1;
+    } else if (num >= 71 && num <= 90) {
+      return 2;
+    } else {
+      return 3;
+    }
+  }
+
+  function createWorld() {
+    //randomly generating the mapsize
+    var matrix = Math.floor(Math.random() * 10) + 10;
+    var map = [];
+
+    //creating the map
+    for (var i = 0; i < matrix; i++) {
+      map[i] = [];
+      for (var j = 0; j < matrix; j++) {
+        //checks if making the border otherwise uses random number between 0-3
+        if (i == 0 || i == matrix - 1) {
+          map[i][j] = 0;
+        } else if (j == 0 || j == (matrix) - 1) {
+          map[i][j] = 0;
+        } else {
+          map[i][j] = drawRandom();
+        }
+      }
+    }
+
+    //checks to make sure each part of the map connects
+    for (var i = 1; i < matrix - 1; i++) {
+      for (var j = 1; j < matrix - 1; j++) {
+        //if the current position is not a wall and is surrounded by walls then make an opening
+        if (map[i][j] != 0 && map[i][j - 1] == 0 && map[i][j + 1] == 0 && map[i - 1][j] == 0 && map[i + 1][j] == 0) {
+          map[i - 1][j] = 1;
+        }
+      }
+    }
+    map[1][1] = 1; //makes sure ninjaman starts on a blank
+    return map;
+  }
+  //varible that contains the game map matrix
+  var world = createWorld();
+
+  //dictionary key for each map value
+  var worldDict = {
+    0: 'wall',
+    1: 'blank',
+    2: 'sushi',
+    3: 'onigiri',
+    4: 'scaredy'
+  };
+
+  //draws the world by iterating through the matrix and checking each dictionary value
+  function drawWorld() {
+    output = "";
+
+    for (var row = 0; row < world.length; row++) {
+      output += "<div class='row'></div>";
+      for (var x = 0; x < world[row].length; x++) {
+        output += "<div class=" + worldDict[world[row][x]] + "></div>";
+      }
+    }
+    document.getElementById('world').innerHTML = output;
+  }
+
+  //calling the original Map
+  drawWorld();
+
+  //Tracking ninjaman's position
+  var ninjaman = {
+    x: 1,
+    y: 1
+  }
+  var score = 0;
+  var lives = 3;
+
+  //updates ninjaman's position on the screen
+  function drawNinjaman() {
+    document.getElementById('ninjaman').style.top = ninjaman.y * 40 + 'px';
+    document.getElementById('ninjaman').style.left = ninjaman.x * 40 + 'px';
+  }
+  //drawing the starting position
+  drawNinjaman();
+
+  //used for updating the score
+  function drawScore() {
+    document.getElementById('score').innerHTML = "Score: " + score;
+  }
+
+  //used for updating the lives counter
+  function drawLives() {
+    document.getElementById('lives').innerHTML = "Lives: " + lives;
+  }
+  drawScore();
+  drawLives();
+
+  //function used to calculate the score for each sqaure
+  function calcScore() {
+    switch (world[ninjaman.y][ninjaman.x]) {
+      case 2:
+        score += 10; //adds 10 points for sushi
+        break;
+      case 3:
+        score += 5; //adds 5 point for Onigiri
+        break;
+      case 4:
+        break; //need to add the activating function for the special char
+    }
+  }
+
+  //moves the ninja and updates the map and score
+  document.onkeydown = function(e) {
+    //Left movement
+    if (e.keyCode == 37) {
+      if (world[ninjaman.y][ninjaman.x - 1] != 0) {
+        ninjaman.x--;
+        calcScore()
+      }
+    }
+    //Right movement
+    if (e.keyCode == 39) {
+      if (world[ninjaman.y][ninjaman.x + 1] != 0) {
+        ninjaman.x++;
+        calcScore()
+      }
+    }
+    //Up movement
+    if (e.keyCode == 38) {
+      if (world[ninjaman.y - 1][ninjaman.x] != 0) {
+        ninjaman.y--;
+        calcScore()
+      }
+    }
+    //Down movement
+    if (e.keyCode == 40) {
+      if (world[ninjaman.y + 1][ninjaman.x] != 0) {
+        ninjaman.y++;
+        calcScore()
+      }
+    }
+
+    world[ninjaman.y][ninjaman.x] = 1; //eats the items
+    drawNinjaman(); //updating ninjaman's new position
+    drawWorld(); //updates the world
+    drawScore(); //updates any changes in score
+  }
+</script>
+
+</html>

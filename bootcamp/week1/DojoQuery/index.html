@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DojoQuery</title>
+</head>
+
+<body>
+    <div>
+        <button id="someIdForSomeButton">Button W. Click Attached by $Dojo</button>
+        <br>
+        <button id="someOtherIdForSomeOtherButton">Button W. Hover Attached by $Dojo</button>
+    </div>
+</body>
+<script src="DojoQuery.js"></script>
+<script>
+
+    $Dojo("someIdForSomeButton").click(function () { console.log("Event listner fired the click event!") });
+    $Dojo("someOtherIdForSomeOtherButton")
+     .hover(
+         function () { console.log("The mouseover event fired off this function!")},
+         function () { console.log("The mouseout event fired off this function!")});
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Forecast App</title>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+</head>
+
+<body>
+    <form id="city_name_search">
+        <!-- Show loading Animation -->
+        <img src="tenor.gif" alt="Loading Animation" width="150" height="150">
+    </form>
+    <br>
+    <div>
+        <h1 id='searched_city'></h1>
+        <h3 id='searched_citys_temp'></h3>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        let citylist = {};
+        /* Read in the city list supplied by OPenWeatherMap API */
+        $.getJSON("citylist.json", function(json) {
+            for (var i = 0; i < json.length; i++) {
+                citylist[`'${json[i].name}'`] = `${json[i].id}`;
+            }
+            document.getElementById('city_name_search').innerHTML = `<input type="text" id='query_string' name="query_string"><button type="submit" form="city_name_search" value="Submit">Search Weather</button>`;
+        });
+
+        $('form').submit(function() {
+            let api_key = `c8ad8064d0452a6b92475a83ffd003a4`;
+            let city_to_query_api = document.getElementById('query_string').value;
+
+            if (citylist.hasOwnProperty(`'${city_to_query_api}'`)) {
+                city_to_query_api = `'${document.getElementById('query_string').value}'`;
+                let url = `https://api.openweathermap.org/data/2.5/weather?id=${citylist[city_to_query_api]}&units=imperial&&appid=${api_key}`;
+                $.get(url, function(res) {
+                    // your code here
+                    document.getElementById('searched_city').innerHTML = res.name;
+                    document.getElementById('searched_citys_temp').innerHTML = `Temperature: ${res.main.temp} &#8457`;
+                }, 'json');
+
+            }
+            else {
+                document.getElementById('searched_city').innerHTML = `Not Found :(`;
+                document.getElementById('searched_citys_temp').innerHTML = `City ${city_to_query_api} not found in OpenWeatherMap list, try again?`;
+            }
+            return false; // Return false so the page doesn't refresh
+        });
+    });
+</script>
+
+</html>
