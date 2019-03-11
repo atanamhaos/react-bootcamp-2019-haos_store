@@ -1,24 +1,30 @@
-# Northwestern Mutual
+#### [*!! NM ReactBootCamp - CodingDojo !!*](https://learn.codingdojo.com/dashboard)
 
 # React Training Syllabus
 
-**Classroom Rules**
+## Classroom Etiquette
 
-Be Present / Focused
+* Be Present and Focused
+* Be Humble and Respectful - [Be excellent to each other!](https://wiki.milwaukeemakerspace.org/newmemberpamphlet#other_information)
+* Find Strength through Struggle - [Pressure Makes Diamonds](https://thisibelieve.org/essay/48710/)
 
-Be Humble / Respectful
+## Instructor
+* **[Speros Misirlakis](http://lmgtfy.com/?q=Speros+Misirlakis)** - [speros@codingdojo.com](mailto:speros@codingdojo.com)
+  * [(22) Speros Misirlakis | LinkedIn](https://www.linkedin.com/in/speros-misirlakis-38474328/)
+  * [MENTOR'S PERSPECTIVE: Q & A with Speros Misirlakis | Coding Dojo Blog](https://www.codingdojo.com/blog/mentor-perspective-speros-misirlakis)
+  * [Speros Misirlakis, Author at Coding Dojo Blog](https://www.codingdojo.com/blog/author/speros-2015)
+  * [(3) Speros Misirlakis - YouTube](https://www.youtube.com/channel/UCPtQj2frQB9E-WxKnbRBNGQ)
+  * [keephopealive (Speros Misirlakis)](https://github.com/keephopealive)
+  * [Twitter / ?](https://twitter.com/keephopealivegr?lang=en)
+  * [Coding Dojo - Mentor's Perspective: Q&A with Head of Curriculum, Speros Misirlakis | Facebook](https://www.facebook.com/CodingDojodotco/videos/2209504015748723/?video_source=permalink)
+  * [Coding Dojo - Mentor's Perspective: Q&A with Head of Curriculum, Speros Misirlakis | Facebook](https://www.facebook.com/CodingDojodotco/videos/mentors-perspective-qa-with-head-of-curriculum-speros-misirlakis/2209504015748723/)
 
-Strength through Struggle
 
-**Instructor**
-
-Speros Misirlakis - [speros@codingdojo.com](mailto:speros@codingdojo.com)
-
-**Syllabus**
+## Syllabus TOC
 
 | **Week** | **Lecture Topics Covered** |
 | --- | --- |
-| 0 | Algorithms + pre-bootcamp material + intro to HTML/ CSS/JavaScript |
+| [0](#week-0) | Algorithms + pre-bootcamp material + intro to HTML/ CSS/JavaScript |
 | 1 | JavaScript + Prep for React, Intro to Node + Yellow Belt Assignment |
 | 2 | React + Node.js + REST API |
 | 3 | React + Redux + NM UI toolkit |
@@ -37,8 +43,8 @@ Speros Misirlakis - [speros@codingdojo.com](mailto:speros@codingdojo.com)
 | 11:30 am | 1 hr | Break/Lunch |
 | 12:30pm | 4 hr | Assignment Completion - Preferably in the same groups as the morning activity, each individual must write their own code. However you are highly encouraged to work together in the projects as a team.Live Demos - As needed, instructor will build assignments live for open Q&amp;A and better understanding of the concepts/material for the day. Limited to 40 mins per day to allow for maximum time to work on assignments and write your own code. |
 | 4:50pm | 10 min | Check-in Expectations for the following day. |
-
-Week 0
+s
+## Week 0
 
 Monday – Pre-bootcamp
 
