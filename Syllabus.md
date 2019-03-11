@@ -21,17 +21,17 @@
 
 
 ## Syllabus TOC
-
+https://github.com/atanamhaos/react-bootcamp-2019-haos_store/blob/master/Syllabus.md#week-0
 | **Week** | **Lecture Topics Covered** |
 | --- | --- |
 | [0](#week-0) | Algorithms + pre-bootcamp material + intro to HTML/ CSS/JavaScript |
-| 1 | JavaScript + Prep for React, Intro to Node + Yellow Belt Assignment |
-| 2 | React + Node.js + REST API |
-| 3 | React + Redux + NM UI toolkit |
-| 4 | React + Redux + NM UI toolkit |
-| 5 | React + Redux + Node + SQL |
-| 6 | React + Redux + Node + SQL + React Belt Assignment |
-| 7 | Recap/Overflow + Project Week + Demo |
+| [1](#week-1) | JavaScript + Prep for React, Intro to Node + Yellow Belt Assignment |
+| [2](#week-2) | React + Node.js + REST API |
+| [3](#week-3) | React + Redux + NM UI toolkit |
+| [4](#week-4) | React + Redux + NM UI toolkit |
+| [5](#week-5) | React + Redux + Node + SQL |
+| [6](#week-6) | React + Redux + Node + SQL + React Belt Assignment |
+| [7](#week-7) | Recap/Overflow + Project Week + Demo |
 
 **Daily Schedule**
 
@@ -44,6 +44,7 @@
 | 12:30pm | 4 hr | Assignment Completion - Preferably in the same groups as the morning activity, each individual must write their own code. However you are highly encouraged to work together in the projects as a team.Live Demos - As needed, instructor will build assignments live for open Q&amp;A and better understanding of the concepts/material for the day. Limited to 40 mins per day to allow for maximum time to work on assignments and write your own code. |
 | 4:50pm | 10 min | Check-in Expectations for the following day. |
 s
+
 ## Week 0
 
 Monday – Pre-bootcamp
@@ -72,7 +73,7 @@ Friday – Web Fundamentals CSS
 1.
   1. Complete assignments through &quot;Bootstrap&quot;
 
-**Week 1**
+## Week 1
 
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
@@ -138,7 +139,7 @@ _Assignments:_ **Using jQuery and MockAPI, create a restful routing between the 
 
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-**Week 2**
+## Week 2**
 
 1. **Monday - Introduction to React**
   1. Understanding how React works.
@@ -185,7 +186,7 @@ _Assignments:_ **Tic-Tac-Toe**
 
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-**Week 3**
+## Week 3**
 
 1. **Monday - Introduction to the React eco-system**
   1. React Devtools
@@ -233,7 +234,7 @@ _Assignment:_ **Rebuild of your own Node Application, routes and connect to: Doj
 
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-**Week 4**
+## Week 4**
 
 1. **Monday - Introduction to Routing**
   1. Understanding routing
@@ -275,7 +276,7 @@ _Assignments:_ **Dojo Weather Forecast**
 _Assignments:_ **User Dashboard**
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-**Week 5 - State Management**
+## Week 5 - State Management**
 
 1. **Monday - Introduction to Redux**
   1. Breaking Redux Down
@@ -315,7 +316,7 @@ _Assignments:_ **Redux Math**
 
 _Assignment:_ **Dojo Todos with Redux** _,_ **Shinto Coin with Redux**  **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-**Week 6 - Practice Week**
+## Week 6 - Practice Week**
 
 1. **Monday &amp; Tuesday**
 
@@ -333,7 +334,7 @@ _Assignments:_ **Bicycle Marketplace (with Redux)**
 
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-**Week 7 – Projects and Demos**
+## Week 7 – Projects and Demos**
 
 1. **Monday – Wireframe and ERD**
 
