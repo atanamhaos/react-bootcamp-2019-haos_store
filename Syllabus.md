@@ -21,7 +21,7 @@
 
 
 ## Syllabus TOC
-https://github.com/atanamhaos/react-bootcamp-2019-haos_store/blob/master/Syllabus.md#week-0
+
 | **Week** | **Lecture Topics Covered** |
 | --- | --- |
 | [0](#week-0) | Algorithms + pre-bootcamp material + intro to HTML/ CSS/JavaScript |
