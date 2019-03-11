@@ -141,7 +141,8 @@ _Assignments:_ **Using jQuery and MockAPI, create a restful routing between the 
 
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-## Week 2**
+
+## Week 2
 
 1. **Monday - Introduction to React**
   1. Understanding how React works.
@@ -188,7 +189,8 @@ _Assignments:_ **Tic-Tac-Toe**
 
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-## Week 3**
+
+## Week 3
 
 1. **Monday - Introduction to the React eco-system**
   1. React Devtools
@@ -236,7 +238,8 @@ _Assignment:_ **Rebuild of your own Node Application, routes and connect to: Doj
 
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-## Week 4**
+
+## Week 4
 
 1. **Monday - Introduction to Routing**
   1. Understanding routing
@@ -278,7 +281,8 @@ _Assignments:_ **Dojo Weather Forecast**
 _Assignments:_ **User Dashboard**
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-## Week 5 - State Management**
+
+## Week 5 - State Management
 
 1. **Monday - Introduction to Redux**
   1. Breaking Redux Down
@@ -318,7 +322,8 @@ _Assignments:_ **Redux Math**
 
 _Assignment:_ **Dojo Todos with Redux** _,_ **Shinto Coin with Redux**  **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-## Week 6 - Practice Week**
+
+## Week 6 - Practice Week
 
 1. **Monday &amp; Tuesday**
 
@@ -336,7 +341,8 @@ _Assignments:_ **Bicycle Marketplace (with Redux)**
 
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
-## Week 7 – Projects and Demos**
+
+## Week 7 – Projects and Demos
 
 1. **Monday – Wireframe and ERD**
 
