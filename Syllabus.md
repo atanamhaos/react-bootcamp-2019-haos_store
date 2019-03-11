@@ -2,7 +2,7 @@
 
 # React Training Syllabus
 * [*haos']*(* [react-bootcamp-2019-haos_store/Syllabus.md at master · atanamhaos/react-bootcamp-2019-haos_store](https://github.com/atanamhaos/react-bootcamp-2019-haos_store/blob/master/Syllabus.md)
-)]
+)
 
 ## Classroom Etiquette
 
