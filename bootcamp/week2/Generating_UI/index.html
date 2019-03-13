@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+         -->
+    <script crossorigin src="lib/js/react.development.js"></script>
+    <script crossorigin src="lib/js/react-dom.development.js"></script>
+    <script crossorigin src="lib/js/angular.min.js"></script>
+    <script src="lib/js/babel.min.js"></script>
+    <!-- -->
+    <title>Generating UI</title>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+
+    <p>The current time is: {{ WHAT DO WE DO?! }}</p>`
+
+    <p>The current time is: <span id="time"></span></p>
+    <button id="time-btn">Get current time</button>
+
+    <ul>
+        <li ng-repeat="item in friends">{{friends}}</li>
+    </ul>
+
+</body>
+<script>
+    /* This doesn't work!! */
+    
+    angular.module('ngRepeat')
+        .controller('ExampleController', ['$scope', function($scope) {
+
+            var friends = [
+                { name: 'John', age: 25 },
+                { name: 'Mary', age: 40 },
+                { name: 'Peter', age: 85 }
+            ];
+            
+            $scope.copy = function() {
+                $scope.friends = angular.copy($scope.friends);
+            };
+
+
+            $scope.reset = function() {
+                $scope.friends = angular.copy(friends);
+            };
+            /*
+             */
+
+            $scope.reset();
+
+        }]);
+</script>
+
+<script>
+    document.getElementById('time-btn').onclick = () => {
+        document.getElementById('time').innerHTML = new Date().toString();
+    }
+</script>
+
+<script>
+    const MyES6Component = (data) => UI;
+    // For those less ES6-inclined:
+    function MyES5Component(data) { return UI; }
+</script>
+</html>
