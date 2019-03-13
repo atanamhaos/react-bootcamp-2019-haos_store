@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ticking Clock</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+        <div id='app'></div>  
+        
+        <div id='app2'></div>
+</body>
+
+<script>
+
+    function tickingClockVanillaJS() {
+
+        document.getElementById('app').innerHTML = `<p>The current time is: <span id="time"></span></p>
+            <button id="time-btn">Get current time</button>`;
+
+        document.getElementById('time-btn').onclick = () => {
+            var Clock = new Date().toString();
+            document.getElementById('time').innerHTML = Clock;
+            setInterval (function () {Clock = new Date().toString();
+                
+                document.getElementById('time').innerHTML = Clock}, 1000);
+        }
+    }
+
+    tickingClockVanillaJS();
+
+    setInterval (function () {
+ReactDOM.render(React.createElement('div',null,
+React.createElement('h1', null, 'The current time is :'),
+React.createElement('p', null, new Date().toString())
+), document.getElementById('app2'));
+}, 1000);
+
+
+
+</script>
+
+</html>
