@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="node_modules/react/umd/react.development.js"></script>
+        <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+        <title>Hello Dojo</title>
+    </head>
+    <body>
+        <div id="app">
+
+        </div>
+    </body>
+
+    <script>
+
+        console.log(React);
+        
+        const Title = React.createElement("h1", null, "Hello Dojo!");
+        const ListTitle = React.createElement("div", null, "Things I need to do:");
+        const ListItem = React.createElement("li", null, "item1");
+        const ListItem2 = React.createElement("li", null, "item2"); 
+        const ListItem3 = React.createElement("li", null, "item3");
+        const ListItem4 = React.createElement("li", null, "item4");
+        const UnorderedList = React.createElement("ul", null, ListItem, ListItem2, ListItem3, ListItem4);
+
+        const Container = React.createElement("div", null, Title, ListTitle, UnorderedList);
+
+        ReactDOM.render(Container, document.getElementById("app"));
+
+        
+
+    </script>
+</html>

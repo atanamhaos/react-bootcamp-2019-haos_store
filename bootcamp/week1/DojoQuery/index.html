@@ -10,25 +10,19 @@
 
 <body>
     <div>
-        <button id="someIdForSomeButton1">Button W. Click Attached by $DojoOne</button>
-        <button id="someOtherIdForSomeOtherButton1">Button W. Hover Attached by $DojoOne</button>
-    </div>
-    <div>
-        <button id="someIdForSomeButton2">Button W. Click Attached by $Dojo</button>
-        <button id="someOtherIdForSomeOtherButton2">Button W. Hover Attached by $Dojo</button>
+        <button id="someIdForSomeButton">Button W. Click Attached by $Dojo</button>
+        <br>
+        <button id="someOtherIdForSomeOtherButton">Button W. Hover Attached by $Dojo</button>
     </div>
 </body>
 <script src="DojoQuery.js"></script>
-<script src="DojoQuery_I.js"></script>
 <script>
 
-    $DojoOne("someIdForSomeButton1").click(function () { console.log("The button was clicked!") });
-    $DojoOne("someOtherIdForSomeOtherButton1").hover(function () { console.log("The button was hovered on!") });
-//$Dojo();
-//$Dojo().click();
-//console.log($Dojo);
-    /*
-    */
+    $Dojo("someIdForSomeButton").click(function () { console.log("Event listner fired the click event!") });
+    $Dojo("someOtherIdForSomeOtherButton")
+     .hover(
+         function () { console.log("The mouseover event fired off this function!")},
+         function () { console.log("The mouseout event fired off this function!")});
 </script>
 
 </html>
