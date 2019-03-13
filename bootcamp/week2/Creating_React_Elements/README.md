@@ -56,3 +56,21 @@ The above code assumes the following container is already present in the DOM:
 ```
 
 Applications built with just React usually have a single root DOM node (in this case a `div` with the id of `app`), though you can have as many root nodes as you like.
+
+
+### NOTES
+
+This help from Caleb ...
+
+```
+Ben Haos [10:20 AM]
+ whats the chrome extension for allowing cross origin?
+
+Caleb Ugent [10:21 AM]
+ https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
+
+chrome.google.com
+Allow-Control-Allow-Origin: *
+Allows to you request any site with ajax from any source. Adds to response 'Allow-Control-Allow-Origin: *' header
+```
+

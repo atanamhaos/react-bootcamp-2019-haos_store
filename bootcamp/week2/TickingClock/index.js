@@ -1,5 +1,3 @@
-
-
 function tickingClockVanillaJS(){
     
     document.getElementById('app').innerHTML = `<p>The current time is: <span id="time"></span></p>
