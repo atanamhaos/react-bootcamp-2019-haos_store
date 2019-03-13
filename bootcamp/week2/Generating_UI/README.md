@@ -1,4 +1,5 @@
 # Generating_UI 
+* [Generating UI | Basics](http://learn.codingdojo.com/m/19/4884/23689)
 
 When a browser displays a beautiful user interface, it's parsing a tree of DOM nodes. You can create those nodes in a couple different ways:
 
