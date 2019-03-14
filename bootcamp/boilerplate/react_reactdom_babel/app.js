@@ -1,3 +1,5 @@
+/*global React */
+/*global ReactDOM */
 
 /* Used for simple verification things are working */
 console.log('app.js loaded');

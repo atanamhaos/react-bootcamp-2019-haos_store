@@ -1,0 +1,82 @@
+* [Counter | Basics](http://learn.codingdojo.com/m/19/4884/33006)
+
+This is a modification of the below code that was supplied during lecture.
+
+Changes Include:
+
+* Seperate JavaScript from HTML
+* Styling added
+* Reduce button added
+* Change coding of the `addCounter` button's event to remove the spread operator.
+
+### Original Source
+
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        
+        class App extends React.Component {
+
+            constructor(props){
+                super(props);
+                this.state = {
+                    counters: [ {count:0},{count:0} ],
+                }
+            }
+            
+
+            addCounter = () => {
+                // console.log("addCounter INVOKED!");
+                // const temp = this.state.counters;
+                // temp.push({count:0})
+                // this.setState({ counters: temp })
+                this.setState({ counters: [...this.state.counters, {count:0}] })
+            }
+
+            incrementCounter = (idx) => {
+                console.log("Increment Counter INVOKED!");
+                console.log("idx = ", idx);
+                console.log( this.state.counters[idx] );
+                this.state.counters[idx].count++
+                this.setState({
+                    counters: this.state.counters
+                })
+            }
+
+            render() {
+                const counters = this.state.counters.map( (counter, idx) => {
+                    return (
+                        <div key={idx}>
+                            <span>I'm a counter, my current count is {counter.count}</span>
+                            <button onClick={ ()=>{this.incrementCounter(idx) } }>Increment</button>
+                        </div>
+                    );
+                } );
+                return (
+                    <div>
+                        <button onClick={this.addCounter}>Add Counter</button>
+                        {/*<button onClick={ ()=>{  this.addCounter()  } }>Add Counter</button>*/}
+                        {counters}
+                    </div>
+                )
+            }
+        }
+        
+        ReactDOM.render(<App/>, document.getElementById("app"));
+    </script>
+</body>
+</html>
+```
