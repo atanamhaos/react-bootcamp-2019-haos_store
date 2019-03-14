@@ -5,124 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <title>Stateless Functional Components</title>
-    
-    
-    <script src="node_modules/react/umd/react.development.js"></script>
-    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
-    
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
+    <script crossorigin src="lib/js/react.development.js"></script>
+    <script crossorigin src="lib/js/react-dom.development.js"></script>
+    <script src="lib/js/babel.min.js"></script>   
+    <title>Counter</title>  
 </head>
 
 <body>
-    <div id='content'></div>
+    <div id="app"></div>
 </body>
-
-<script type='text/babel'>
-
-
-class Counter extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            counter: 0
-        }
-    }
-    render(){
-        return (
-            <div>
-                <h1>Count : {this.state.counter}</h1>
-                <button
-                    onClick={ () => {
-                        //console.log(this.state.counter);
-                        this.setState({ counter:this.state.counter - 1 });
-                    } } >
-                    Subtract One
-                </button>
-                <button
-                    onClick={ () => {
-                        //console.log(this.state.counter);
-                        this.setState({ counter:this.state.counter + 1 });
-                    } } >
-                    Add One
-                </button>
-            </div>
-        )
-    }
-}
-
-
-class App extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            text: [<Counter/>,<Counter/>,<Counter/>,<Counter/>],
-        }
-        
-      
-        
-        /*
-        let this.state.text[0]('key')='1'; 
-        
-        this.state.text[1].key=2;
-        this.state.text[2].key=3;
-        this.state.text[3].key=4;
-    */
-    }
-    
-
-    render(){
-        console.log(this.state.text);
-        let numOfCounter=(this.state.text).length;
-        console.log(numOfCounter);
-        return (
-            <div>
-                <button
-                onClick={ () => {
-                    console.log(this.state.text);
-                    let testerObject = <Counter/>;
-                    let arrStash = [];
-                    arrStash = this.state.text;
-                    arrStash.push(testerObject);
-                    this.setState({ text: arrStash });
-                    //this.render();
-                } } >
-                Add Counter
-                </button>
-                {numOfCounter}
-                {this.state.text}
-            
-                
-                
-                </div>
-        )
-    }
-/*
-render(){
-    let testerObject = <Counter/>
-    console.log(this.state.text);
-    return (
-        <div>
-            <button
-            onClick={ () => this.setState({ text: this.state.text + <Counter/> }) } >
-            Add Counter
-            </button>
-            
-            {this.state.text}
-            
-            
-            </div>
-            )
-        }
-         */
-}
-
-ReactDOM.render(<App/>, document.getElementById('content'));
-
-</script>
-
-
-
+<script type="text/babel" src="app.js"></script>
 </html>

@@ -15,3 +15,4 @@ ReactDOM.render(
 );
 
 console.log('app.js is done');
+
