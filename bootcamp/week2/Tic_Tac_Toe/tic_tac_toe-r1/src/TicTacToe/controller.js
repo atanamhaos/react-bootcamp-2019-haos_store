@@ -1,7 +1,7 @@
 import React from 'react';
 import TicTacToeBoard from '../TicTacToe/board.js';
 
-console.log('controller.js - starts laoding');
+//console.log('controller.js - starts laoding');
 
 
 class GameController extends React.Component {
@@ -16,13 +16,13 @@ class GameController extends React.Component {
 
 
     render(){
-        console.log(this);
+        //console.log(this);
         
                  
         const clickSquare = () => {
             
-            console.log('Square clicked by '+this.state.playee);          
-            console.log('Square clicked by '+this);
+            //console.log('Square clicked by '+this.state.playee);          
+            //console.log('Square clicked by '+this);
             
     };
 
