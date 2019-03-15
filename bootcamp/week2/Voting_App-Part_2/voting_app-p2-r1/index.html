@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+-->
+    <script src="lib/js/react.development.js"></script>
+    <script src="lib/js/react-dom.development.js"></script>
+    <script src="lib/js/babel.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="App"></div>
+</body>
+
+
+<script type="text/babel">
+
+
+  const ChoiceList = (props) => {
+        props.choiceList.sort((a,b) => {
+            return b.count - a.count;
+        }) 
+        var options = props.choiceList.map((option, optionIndex) =>{
+            return <li onClick={ () => {props.voteFunc(option.name)}}>{option.name} - {option.count} </li>;
+        })
+        return (
+            <ul>
+                {options}
+            </ul>
+        )
+    };
+
+    
+   
+
+    class App extends React.Component {
+        constructor(props){
+            super(props);
+            this.state = {
+                voteData:props.data,
+            }
+        }
+
+        castVoteOfSomeSort = (name) => {
+            console.log("Casting Vote for " + name);
+            for(let i = 0; i < this.state.voteData.length; i++) {
+                console.log("In a loop");
+                if(this.state.voteData[i].name === name) {
+                console.log("In a loop"+ this.state.voteData[i].count);
+                    this.state.voteData[i].count ++;
+
+                }
+            }
+
+            this.setState({
+                voteData: this.state.voteData
+            })
+        }
+        
+        
+        
+        render(){
+            console.log(this);
+            
+            return (
+                <div>
+                
+                <h1>Vote Your JS Library</h1>
+                    <ChoiceList choiceList={this.state.voteData} voteFunc={this.castVoteOfSomeSort}/>
+                    </div>
+            );
+        }
+    }
+    
+    const choices = [{name:'React',count:0},{name:'Vue',count:0},{name:'Angular',count:0},{name:'Ember',count:0}];
+    ReactDOM.render (<App data={choices}/>,document.getElementById('App'));
+
+</script>
+
+
+
+</html>
