@@ -1,28 +1,14 @@
 import React from 'react';
 
 class TicTacToeBoard extends React.Component {
-    constructor(props) {
-        super(props);
-        /*
-        this.state = {
-        }
-        */
-    }
-
     render() {
-
-        const ticTacToeBoardFunOuter = (row) => {
-            return row.map(ticTacToeBoardFunInner);
-        }
-
-        const ticTacToeBoardFunInner = (num, index, arr) => {
-
-            let returnElement = '';
-           
+        //console.log('TicTacToeBoard class');
+        const ticTacToeBoardFun = (num, index, arr) => {
             let fontSizeVar = 1234;
-
+            let keyVal=index+1;
+            let idVal=`Square${keyVal}`;
             const cellStyleBlank = {
-                backgroundColor: 'red',
+                backgroundColor: 'white',
                 width: '29%',
                 float: 'left',
                 display: 'block',
@@ -50,25 +36,26 @@ class TicTacToeBoard extends React.Component {
                 textAlign: 'center',
                 fontSize: `${fontSizeVar}%`,
             };
-
+            
             if (num === 0) {
-                returnElement = <div style={cellStyleBlank } onClick={ ()=>{this.props.actionOnSquare() } }>&nbsp;</div>;
+                //console.log(this.props);
+                if (this.props.winnerExist)
+                return <div key={keyVal} id={idVal} style={cellStyleBlank} >&nbsp;</div>;
+                else
+                return <div key={keyVal} id={idVal} style={cellStyleBlank} onClick={ ()=>{this.props.actionOnSquare(keyVal) } }>&nbsp;</div>;
             }
             else if (num === 1) {
-                returnElement = <div style={cellStyleWitEx}>X</div>;
+                return <div key={keyVal} id={idVal} style={cellStyleWitEx}>X</div>;
             }
             else {
-                returnElement = <div style={cellStyleWitOh}>O</div>;
+                return <div key={keyVal} id={idVal} style={cellStyleWitOh}>O</div>;
             }
-
-            return returnElement;
+            
         }
-
-        console.log(this.props.marks.map(ticTacToeBoardFunOuter));
 
         return (
             <div>
-            {this.props.marks.map(ticTacToeBoardFunOuter)}
+            {this.props.marks.map(ticTacToeBoardFun)}
             </div>
         );
     }

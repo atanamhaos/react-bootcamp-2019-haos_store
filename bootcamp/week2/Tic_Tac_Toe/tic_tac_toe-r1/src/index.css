@@ -12,3 +12,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#Square1 {
+  border-width: 0px 5px 5px 0px;
+  border-style: solid;
+  border-color: 'black';
+}
+
+#Square2 {
+  border-width: 0px 5px 5px 5px;
+  border-style: solid;
+  border-color: 'black';
+}
+
+#Square3 {
+  border-width: 0px 0px 5px 5px;
+  border-style: solid;
+  border-color: 'black';
+}
+
+#Square4 {
+  border-width: 5px 5px 5px 0px;
+  border-style: solid;
+  border-color: 'black';
+}
+
+#Square5 {
+  border-width: 5px 5px 5px 5px;
+  border-style: solid;
+  border-color: 'black';
+}
+
+#Square6 {
+  border-width: 5px 0px 5px 5px;
+  border-style: solid;
+  border-color: 'black';
+}
+
+#Square7 {
+  border-width: 5px 5px 0px 0px;
+  border-style: solid;
+  border-color: 'black';
+}
+
+#Square8 {
+  border-width: 5px 5px 0px 5px;
+  border-style: solid;
+  border-color: 'black';
+}
+#Square9 {
+  border-width: 5px 0px 0px 5px;
+  border-style: solid;
+  border-color: 'black';
+}
