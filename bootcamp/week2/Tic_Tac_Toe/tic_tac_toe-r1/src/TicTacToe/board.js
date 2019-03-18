@@ -50,8 +50,7 @@ class TicTacToeBoard extends React.Component {
             else {
                 return <div key={keyVal} id={idVal} style={cellStyleWitOh}>O</div>;
             }
-            
-        }
+        };
 
         return (
             <div>

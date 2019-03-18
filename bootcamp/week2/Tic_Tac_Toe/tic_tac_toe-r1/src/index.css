@@ -65,3 +65,12 @@ code {
   border-style: solid;
   border-color: 'black';
 }
+
+#ui_message {
+  display: inline-block;
+  width: 99%;
+  text-align: center;
+  border-width: 3px 3px 3px 3px;
+  border-style: solid;
+  border-color: red;
+}
