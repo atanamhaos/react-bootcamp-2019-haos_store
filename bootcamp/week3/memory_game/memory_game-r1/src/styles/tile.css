@@ -1,0 +1,11 @@
+.tile{
+    display:inline-block;
+    border:1px solid black;
+    vertical-align:top;
+    height:100px;
+    width:100px;
+}
+
+.tileButtonDiv{
+    display:inline-block;
+}
