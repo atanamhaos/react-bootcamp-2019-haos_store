@@ -1,14 +1,14 @@
 {
-  "main.css": "/static/css/main.416ac066.chunk.css",
-  "main.js": "/static/js/main.3d0df63a.chunk.js",
-  "main.js.map": "/static/js/main.3d0df63a.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.4952e05c.chunk.js": "/static/js/2.4952e05c.chunk.js",
-  "static/js/2.4952e05c.chunk.js.map": "/static/js/2.4952e05c.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.f8e40c6818fe24683533ce79d0eec7db.js": "/precache-manifest.f8e40c6818fe24683533ce79d0eec7db.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.416ac066.chunk.css.map": "/static/css/main.416ac066.chunk.css.map",
-  "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+  "main.css": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/static/css/main.416ac066.chunk.css",
+  "main.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/static/js/main.467ddef4.chunk.js",
+  "main.js.map": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/static/js/main.467ddef4.chunk.js.map",
+  "runtime~main.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/static/js/runtime~main.69a128c0.js",
+  "runtime~main.js.map": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/static/js/runtime~main.69a128c0.js.map",
+  "static/js/2.4952e05c.chunk.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/static/js/2.4952e05c.chunk.js",
+  "static/js/2.4952e05c.chunk.js.map": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/static/js/2.4952e05c.chunk.js.map",
+  "index.html": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/index.html",
+  "precache-manifest.b46639be6bd3e82c8d8e5705fa26e3a7.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/precache-manifest.b46639be6bd3e82c8d8e5705fa26e3a7.js",
+  "service-worker.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/service-worker.js",
+  "static/css/main.416ac066.chunk.css.map": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/static/css/main.416ac066.chunk.css.map",
+  "static/media/logo.svg": "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/static/media/logo.5d5d9eef.svg"
 }

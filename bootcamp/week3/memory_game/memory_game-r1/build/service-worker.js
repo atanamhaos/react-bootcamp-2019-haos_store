@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.f8e40c6818fe24683533ce79d0eec7db.js"
+  "/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/precache-manifest.b46639be6bd3e82c8d8e5705fa26e3a7.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/index.html", {
+workbox.routing.registerNavigationRoute("/react-bootcamp-2019-haos_store/bootcamp/week3/memory_game/memory_game-r1/build/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
