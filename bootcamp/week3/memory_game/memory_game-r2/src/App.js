@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import logo from './images/logo.svg';
-import './styles/App.css';
+import Tile from './components/Tile.js';
 
 class App extends Component {
   render() {
     return (
+      <div>
+      <Tile />
+      </div>
+    );
+  }
+}
+
+
+/*
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -21,8 +29,7 @@ class App extends Component {
           </a>
         </header>
       </div>
-    );
-  }
-}
+
+*/
 
 export default App;
