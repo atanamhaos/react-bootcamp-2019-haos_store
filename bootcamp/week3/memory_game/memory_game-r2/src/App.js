@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div>
-      <Tile />
+      <Tile tileValue='Tile this is?' />
       </div>
     );
   }

@@ -4,7 +4,7 @@ class Tile extends React.Component {
     render() {
         return (
             <div>
-               <p>Tile this is?</p>
+               <p>{this.props.tileValue}</p>
            </div>
         );
     }
