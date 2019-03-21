@@ -1,5 +1,10 @@
 ## Working around CORS problems
 
+
+### 4 Windows
+
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files --allow-file-access --allow-cross-origin-auth-prompt`
+
 ### 4 macOS
 
 Quit any running instance of Chrome.
