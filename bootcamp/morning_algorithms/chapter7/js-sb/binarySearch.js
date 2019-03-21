@@ -9,8 +9,8 @@ function binarySearch(R, n) {
         /* check low and high values of the range being checked for value being searched for. */
         if (R[l]  === n || R[h] === n) {
             return true;
-        } /* If low and high value are the same, only one value is being checked and we already know checked if it equals the value being searched for. */
-        else if (l === h) {
+        } /* If low and high value are the same or adjacent to one another, only one value is being checked and we already know checked if it equals the value being searched for. */
+        else if (l === h || (l+1)===h) {
             return false;
         }
         
@@ -29,18 +29,45 @@ function binarySearch(R, n) {
     /* Call the recursive function. */
     return binarySearch(R, n, 0, R.length-1);
 }
+/*
+*/
+if (binarySearch([7,14,21],0)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21],6)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21],7)) process.stdout.write('pass'); else process.stdout.write('\n---> fail <---\n');
+if (binarySearch([7,14,21],8)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21],13)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21],14)) process.stdout.write('pass'); else process.stdout.write('\n---> fail <---\n');
+if (binarySearch([7,14,21],15)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21],20)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21],21)) process.stdout.write('pass'); else process.stdout.write('\n---> fail <---\n');
+if (binarySearch([7,14,21],22)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
 
+if (binarySearch([7,14,21,28],0)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21,28],6)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21,28],8)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21,28],13)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21,28],14)) process.stdout.write('pass'); else process.stdout.write('\n---> fail <---\n');
+if (binarySearch([7,14,21,28],15)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21,28],21)) process.stdout.write('pass'); else process.stdout.write('\n---> fail <---\n');
+if (binarySearch([7,14,21,28],27)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([7,14,21,28],28)) process.stdout.write('pass'); else process.stdout.write('\n---> fail <---\n');
+if (binarySearch([7,14,21,28],29)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
 
-if (binarySearch([5, 9, 10, 11, 15, 16, 17, 18, 19, 20], 4)) console.log('fail'); else console.log('pass');
-if (binarySearch([5,9,10,11,15,16,17,18,19,20],6)) console.log('fail'); else console.log('pass');
-if (binarySearch([5,9,10,11,15,16,17,18,19,20],21)) console.log('fail'); else console.log('pass');
-if (binarySearch([5,9,10,11,15,16,17,18,19,20],0)) console.log('fail'); else console.log('pass');
-if (binarySearch([5,9,10,11,15,16,17,18,19,20],100)) console.log('fail'); else console.log('pass');
+if (binarySearch([9,10,11,14,16,18,18,19,20],17)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([9,10,11,14,16,18,18,19,20],16)) process.stdout.write('pass'); else process.stdout.write('\n---> fail <---\n');
+if (binarySearch([9,10,11,14,16,18,18,19,20],15)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
 
-if (binarySearch([5,9,10,11,15,16,17,18,19,20],5)) console.log('pass'); else console.log('fail');
-if (binarySearch([5,9,10,11,15,16,17,18,19,20],11)) console.log('pass'); else console.log('fail');
-if (binarySearch([5,9,10,11,15,16,17,18,19,20],20)) console.log('pass'); else console.log('fail');
+if (binarySearch([5,9,10,11,15,16,17,18,19,20],6)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([5,9,10,11,15,16,17,18,19,20],21)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
 
-if (binarySearch([9,10,11,14,16,18,18,19,20],17)) console.log('fail'); else console.log('pass');
-if (binarySearch([9,10,11,14,16,18,18,19,20],16)) console.log('pass'); else console.log('fail');
-if (binarySearch([9,10,11,14,16,18,18,19,20],15)) console.log('fail'); else console.log('pass');
+if (binarySearch([5,9,10,11,15,16,17,18,19,20],0)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+if (binarySearch([5,9,10,11,15,16,17,18,19,20],5)) process.stdout.write('pass'); else process.stdout.write('\n---> fail <---\n');
+if (binarySearch([5,9,10,11,15,16,17,18,19,20],11)) process.stdout.write('pass'); else process.stdout.write('\n---> fail <---\n');
+if (binarySearch([5,9,10,11,15,16,17,18,19,20],20)) process.stdout.write('pass'); else process.stdout.write('\n---> fail <---\n');
+if (binarySearch([5,9,10,11,15,16,17,18,19,20],100)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+
+if (binarySearch([5, 9, 10, 11, 15, 16, 17, 18, 19, 20], 4)) process.stdout.write('\n---> fail <---\n'); else process.stdout.write('pass');
+/*
+*/
+
+process.stdout.write('\nCompleted testing\n');
