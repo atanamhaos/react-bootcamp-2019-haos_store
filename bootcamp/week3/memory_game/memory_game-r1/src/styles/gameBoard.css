@@ -1,3 +1,7 @@
-.gameBoardRow{
-    display:block;
+#gameBoardRow{
+    display:inline-block;
+    border:10px solid black;
+    vertical-align:top;
+    height:100px;
+    width:100px;
 }

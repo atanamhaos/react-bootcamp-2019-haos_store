@@ -6,7 +6,7 @@ class Game extends React.Component {
     super(props);
     this.state = {
       tileValues:['1','2','3','4','5','6'],
-      gamePlayField:[],
+      gamePlayfield:[],
       gameStatus:'Loading New Game',
       gameIsLoaded:false,
       numRoundPlayed:0,
@@ -17,7 +17,17 @@ class Game extends React.Component {
     //this.setState({gamePlayField:['1','2','3','4','5','6','1','2','3','4','5','6']});
     //this.setState({gameIsLoaded:true});
     
-    this.state.gamePlayField=['1','2','3','4','5','6','1','2','3','4','5','6'];
+    this.state.gamePlayfield=['1','2','3','4','5','6','1','2','3','4','5','6'];
+    
+    
+    let randomPlayfield = [];
+    
+    //let test=1;
+    //console.log(++test);
+    
+    
+    
+    /* Set Flag */
     this.state.gameIsLoaded=true;
   }
   
@@ -31,7 +41,7 @@ class Game extends React.Component {
     }
     return (
       <div>
-        <Board tileValues={this.state.gamePlayField}/>
+        <Board tileValues={this.state.gamePlayfield}/>
       </div>
     );
   }
