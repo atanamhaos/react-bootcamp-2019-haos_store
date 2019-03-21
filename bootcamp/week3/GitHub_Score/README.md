@@ -1,0 +1,1 @@
+![wire diagram of app to build](./img/github_score.png)
