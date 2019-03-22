@@ -1,11 +1,11 @@
 {
-  "main.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/static/js/main.d6d34af2.chunk.js",
-  "main.js.map": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/static/js/main.d6d34af2.chunk.js.map",
-  "runtime~main.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/static/js/runtime~main.d82721e0.js",
-  "runtime~main.js.map": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/static/js/runtime~main.d82721e0.js.map",
-  "static/js/2.93921897.chunk.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/static/js/2.93921897.chunk.js",
-  "static/js/2.93921897.chunk.js.map": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/static/js/2.93921897.chunk.js.map",
-  "index.html": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/index.html",
-  "precache-manifest.b345e657356871bdf77144216be8d3f2.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/precache-manifest.b345e657356871bdf77144216be8d3f2.js",
-  "service-worker.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/service-worker.js"
+  "main.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/build/static/js/main.d8d82495.chunk.js",
+  "main.js.map": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/build/static/js/main.d8d82495.chunk.js.map",
+  "runtime~main.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/build/static/js/runtime~main.25005093.js",
+  "runtime~main.js.map": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/build/static/js/runtime~main.25005093.js.map",
+  "static/js/2.93921897.chunk.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/build/static/js/2.93921897.chunk.js",
+  "static/js/2.93921897.chunk.js.map": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/build/static/js/2.93921897.chunk.js.map",
+  "index.html": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/build/index.html",
+  "precache-manifest.3ed452fcdf4071c63af0ed75985209de.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/build/precache-manifest.3ed452fcdf4071c63af0ed75985209de.js",
+  "service-worker.js": "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/build/service-worker.js"
 }

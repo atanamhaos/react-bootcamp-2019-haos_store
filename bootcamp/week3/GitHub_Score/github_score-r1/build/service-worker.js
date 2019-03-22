@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/precache-manifest.b345e657356871bdf77144216be8d3f2.js"
+  "/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/build/precache-manifest.3ed452fcdf4071c63af0ed75985209de.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/index.html", {
+workbox.routing.registerNavigationRoute("/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1/build/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
