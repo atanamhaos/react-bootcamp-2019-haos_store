@@ -19,7 +19,6 @@ class MovieSearch extends React.Component {
   }
   
   render() {
-    console.log();
     return (
       <div id="movie_search">
        {/* ToDo: add search magnifier to search field. */}
