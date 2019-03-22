@@ -11,7 +11,6 @@ class GitHubScoreSearch extends React.Component {
   }
 
   submit_function = (event) => {
-     //console.log('submit_function');
      event.preventDefault();
      this.props.search_function(this.state.search_query); 
      this.setState({search_query:''});
@@ -20,7 +19,7 @@ class GitHubScoreSearch extends React.Component {
   search_submit_button = () => {
     return (
       <div id='search_button'>
-      <button name='search_submit' disabled={this.state.search_query ? false : true}>Calculate my GitHub Score</button>
+      <button name='search_submit' disabled={this.state.search_query ? false : true}>Calculate user's GitHub Score</button>
       </div>
       );
   }
@@ -46,11 +45,23 @@ class GitHubScoreSearch extends React.Component {
       );
     
   }
+
+   componentStyle = () => {
+    /*
+      border: '2px solid green',
+    */
+    const simpleStyle = {
+      width: '45%',
+      float: 'left',
+    };
+    return simpleStyle;
+  }
   
   render() {
     return (
-      <div id="search_form">
-         {this.search_form()}
+        <div id="search_form" style={this.componentStyle()}>
+        <h1>GitHub Score</h1>
+        {this.search_form()}
       </div>
     );
   }

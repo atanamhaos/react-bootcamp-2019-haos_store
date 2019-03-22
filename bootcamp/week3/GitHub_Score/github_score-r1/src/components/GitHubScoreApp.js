@@ -21,13 +21,28 @@ class GitHubScoreApp extends React.Component {
   }
 
   getUsersRepos = (userName) => {
-    let ghUsersReposApiURL = `https://api.github.com/users/${userName}/repos`;
+    let ghUsersReposApiURL = `https://api.github.com/users/${userName}/repos?per_page=100`;
 
     axios.get(`${ghUsersReposApiURL}`)
       .then((response) => {
-        //console.log(response);
-        //console.log(response.data.items);
         this.setState({ usersRepos: response.data });
+
+        /* Deal w. users having more than 100 repos */
+        if (response.data.length > 99) {
+          ghUsersReposApiURL = `https://api.github.com/users/${userName}/repos?per_page=100&page=2`;
+          axios.get(`${ghUsersReposApiURL}`)
+            .then((response) => {
+              let concatedUserReposArray = this.state.usersRepos.concat(response.data);
+              this.setState({ usersRepos: concatedUserReposArray });
+            })
+            .catch(function(error) {
+              // handle error
+              console.log(error);
+            })
+            .then(function() {
+              // always executed
+            });
+        }
       })
       .catch(function(error) {
         // handle error
@@ -77,10 +92,21 @@ class GitHubScoreApp extends React.Component {
       });
   }
 
+  appStyle = () => {
+    /*
+      border: '2px solid black',
+    */
+    const simpleStyle = {
+      width: '90%',
+      height: '200px',
+    };
+    return simpleStyle;
+  }
+
   render() {
+
     return (
-      <div id="app_wrapper">
-      <h1>GitHub Score</h1>
+      <div id="app_wrapper" style={this.appStyle()}>
       <GitHubScoreSearch search_function={this.search_function}/>
       <GitHubScoreResult search_results={this.state}/>
       </div>
