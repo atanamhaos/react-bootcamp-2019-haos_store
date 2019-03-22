@@ -2,6 +2,7 @@
   "name": "github_score-r1",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://atanamhaos.github.io/react-bootcamp-2019-haos_store/bootcamp/week3/GitHub_Score/github_score-r1",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.4",
