@@ -35,8 +35,8 @@ app.post("/posttodos", (request, response) => {
     response.json({
         status: true,
         todos: todos
-    })
-})
+    });
+});
 
 // C9_HOSTNAME
 app.listen(port, () => {
