@@ -19,42 +19,58 @@ let app_data = [{
 app.get("/data/:username", (request, response) => {
 
     if (app_data[0].queried_user !== request.params.username) {
-       app_data[0].queried_user = request.params.username;
-       app_data[0].queried_user_exists = false;
-       app_data[0].queried_users_num_of_repos = 0;
-       app_data[0].queried_users_num_of_followers = 0;
+        app_data[0].queried_user = request.params.username;
+        app_data[0].queried_user_exists = false;
+        app_data[0].queried_users_num_of_repos = 0;
+        app_data[0].queried_users_num_of_followers = 0;
     }
-    
-    
-    query_github_for_user(request.params.username);
 
+
+    query_github_for_user(request.params.username, response);
+
+    /*
     setTimeout(() => {
         response.json({
             status: true,
             payload: app_data,
         });
     }, 3000);
+    */
     //console.log('app.get finishes.');
 });
 
-function query_github_for_user(username) {
-   //console.log('username = ' + username);
+
+
+function returnResponse(response) {
+    response.json({
+        status: true,
+        payload: app_data,
+    });
+}
+
+function create_object_w_data_for_github_score(username, response) {
+        
+}
+
+function query_github_for_user(username, response) {
+    //console.log('username = ' + username);
     const ghUserApiURL = 'https://api.github.com/search/users?q=';
 
     axios.get(`${ghUserApiURL}${username}`)
         .then((response) => {
             if (response.data.items.length > 0) {
                 app_data[0].queried_user_exists = true;
-                getDataForScore(username);
+                getDataForScore(username, response);
+            }
+            else {
+                app_data[0].queried_user_exists = false;
+                returnResponse(response);
             }
         })
         .catch(function(error) {
             // handle error
             console.log(error);
         })
-        .then(function() {
-            // always executed
-        });
 }
 
 function getDataForScore(username) {

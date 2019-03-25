@@ -70,11 +70,12 @@ class GitHubScoreApp extends React.Component {
   }
 
   search_function = (search_query) => {
-    const ghUserApiURL = 'https://api.github.com/search/users?q=';
+    const ghUserApiURL = 'https://api.github.com/users/';
     let userName = `${search_query}`;
 
     axios.get(`${ghUserApiURL}${userName}`)
       .then((response) => {
+        console.log(response);
         if (response.data.items.length > 0) {
           this.setState({ queriedUser: search_query, userExists: true, usersData: response.data.items });
           this.getDataForScore(userName);
