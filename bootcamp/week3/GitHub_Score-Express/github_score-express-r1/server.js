@@ -70,7 +70,7 @@ function query_github_for_user(username, response) {
         .catch(function(error) {
             // handle error
             console.log(error);
-        })
+        });
 }
 
 function getDataForScore(username) {
