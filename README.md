@@ -22,8 +22,23 @@ command -v nvm
 ```
 nvm install 10.15.3
 nvm use 10.15.3
-nvm alias 10.15.3 node
+nvm alias default node
 ```
+
+```
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
+```
+npm install -g nodemon
+```
+
+
+`npm init`
+`npm install axios`
+`npx create-react-app <app_name>`
 
 
 ## SSH Key Generation
@@ -50,3 +65,17 @@ git remote set-url origin <url>
 
 Setup Keyboard Shortcuts on Chrome OS 
 https://www.addictivetips.com/web/disable-a-chrome-keyboard-shortcut/
+
+git clone git@github.com:atanamhaos/react-bootcamp-2019-haos_store.git
+
+sudo apt-get update
+sudo apt-get -y install build-essential checkinstall libssl-dev
+exit
+
+nvm install 10.15.3
+nvm use 10.15.3
+nvm alias default node
+
+npm install -g nodemon
+npm install axios
+
