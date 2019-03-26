@@ -7,7 +7,23 @@
 
 ### Misc. Notes
 
+## Update Node/NPM on C9 VM
 
+* Two step process to update node to version on C9 VM (20190326)
+
+```
+sudo apt-get update
+sudo apt-get -y install build-essential checkinstall libssl-dev
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+command -v nvm
+```
+**Restart terminal**
+
+```
+nvm install 10.15.3
+nvm use 10.15.3
+nvm alias 10.15.3 node
+```
 
 
 ## SSH Key Generation

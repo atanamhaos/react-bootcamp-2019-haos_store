@@ -5,7 +5,7 @@ const axios = require("axios");
 
 const port = 8080;
 const watchdir = '../movie_data-client-r1/build/';
-const mockapiurl = 'http(s)://5c99df5a1a4c360014a0ffc1.mockapi.io/bootcamp/';
+const mockapiurl = 'http://5c99df5a1a4c360014a0ffc1.mockapi.io/bootcamp';
 
 app.use(express.static(`${watchdir}`));
 app.use(bodyParser.json());
@@ -15,24 +15,36 @@ let app_data = [{
     searches: [{ search_string: 'test' }],
 }];
 
+let response_json = {
+    status: false,
+    payload: app_data,
+};
 
-app.get("/data", (request, response) => {
+// * [mockAPI](https://www.mockapi.io/projects/5c99df5a1a4c360014a0ffc2)
+let test = `${mockapiurl}/searches`;
 
-
-    axios.get(`${mockapiurl}`)
+app.get("/searches", (request, response) => {
+    console.log(test);
+    axios.get(`${mockapiurl}/searches`)
         .then(resp => {
-            //console.log(resp);
+            console.log(resp);
             //app_data[0].workLogCards=resp.data;
+            /*
             response.json({
                 status: true,
                 payload: app_data,
             });
+            */
         })
         .catch(function(error) {
             // handle error
-            console.log('!!!!!!!!!!!!!!!!!error');
+            //console.log('!!!!!!!!!!!!!!!!!error');
             console.log(error);
         });
+    /*
+     */
+
+    response.json(response_json);
 });
 
 
@@ -91,6 +103,7 @@ app.delete("/data/:indexToDelete", (request, response) => {
 
 app.listen(port, () => {
     console.log(`Server starting on port ${port}`);
+    for (var i = 0; i < 10; i++) console.log();
     if (process.env.C9_HOSTNAME !== '') {
         app._router.stack.forEach(function(r) {
             if (r.route && r.route.path) {
@@ -98,4 +111,5 @@ app.listen(port, () => {
             }
         });
     }
+    for (var i = 0; i < 10; i++) console.log();
 });
