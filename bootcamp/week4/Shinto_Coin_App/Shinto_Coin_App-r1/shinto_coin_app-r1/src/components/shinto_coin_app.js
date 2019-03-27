@@ -5,12 +5,17 @@ import Home from "./home_page";
 import Mine from "./mine_coin";
 import Buy from "./buy_coin";
 import Sell from "./sell_coin";
+import Browse from "./browse_ledger";
 
 
-function ShintoCoinApp() {
+
+class ShintoCoinApp extends React.Component {
+  render(){
+    
   return (
     <Router>
       <div>
+        <img src="./img/applogo.png" alt="logo"/>
         <ul>
           <li><Link to="/home">Home</Link></li>
           <li><Link to="/mine">Mine Coins</Link></li>
@@ -31,13 +36,6 @@ function ShintoCoinApp() {
     </Router>
   );
 }
-
-function Browse() {
-  return (
-    <div>
-      <h2>View all the ShintoCoin Transactions you have enjoyed.</h2>
-    </div>
-  );
-}
+  }
 
 export default ShintoCoinApp;

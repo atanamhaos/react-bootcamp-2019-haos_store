@@ -11,7 +11,7 @@ Useful questions:
 !["Home Page Image"](./img/homepage.png)
 !["Coin Mining Page"](./img/minecoin.png)
 !["Buy Coins Page"](./img/buycoin.png)
-!["Sell Coins Page"](./img/.sellcoin.png)
+!["Sell Coins Page"](./img/sellcoin.png)
 !["Browse Ledger Page"](./img/ledger.png)
 !["Ledger Transactions Page"](./img/transaction.png)
 

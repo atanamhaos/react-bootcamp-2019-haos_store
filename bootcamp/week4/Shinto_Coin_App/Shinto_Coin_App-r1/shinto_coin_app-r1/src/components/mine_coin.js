@@ -3,7 +3,9 @@ import React from "react";
 function Mine() {
   return (
     <div>
-      <h2>Work hard and get coins!</h2>
+    <h1>Mine Shinto Coins</h1>
+    <h2>coming Soon</h2>
+    <p></p>
     </div>
   );
 }
