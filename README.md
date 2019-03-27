@@ -4,7 +4,6 @@
 * [react_bootcamp-2019-haos_store - Cloud9](https://ide.c9.io/benjaminhaos/react_bootcamp-2019-haos_store-r2)
 
 
-
 ### Misc. Notes
 
 ## Update Node/NPM on C9 VM
