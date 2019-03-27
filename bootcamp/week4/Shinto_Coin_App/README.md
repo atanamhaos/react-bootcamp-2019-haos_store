@@ -1,3 +1,5 @@
+!["Shinto Coin App Logo"](./img/applogo.png)
+
 Create your very own ShintoCoin website, where guests can gain new coins, buy, sell and view the transaction history of ShintoCoins.
 
 Useful questions:
