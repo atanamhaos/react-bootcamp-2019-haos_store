@@ -7,6 +7,7 @@ import Mine from "./mine_coin";
 import Buy from "./buy_coin";
 import Sell from "./sell_coin";
 import Ledger from "./browse_ledger";
+import Transaction from "./transaction";
 import Footer from "./footer";
 
 
@@ -60,6 +61,7 @@ class ShintoCoinApp extends React.Component {
             <Route path="/buy" render={(props) =><Buy {...props} data={this.state} transactioneer={this.transactioneer} />}/>
             <Route path="/sell" render={(props) =><Sell {...props} data={this.state} transactioneer={this.transactioneer} />}/>
             <Route path="/ledger" render={(props) =><Ledger {...props} data={this.state} transactioneer={this.transactioneer} />}/>
+            <Route path="/transaction/:id" render={(props) =><Transaction {...props} data={this.state} transactioneer={this.transactioneer} />}/>
           </div>
           </div>
         <Footer/>
