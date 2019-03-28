@@ -1,6 +1,8 @@
 import React from "react";
 
-function Browse() {
+function Ledger(props) {
+  console.log(props.data.transactions);
+  
   return (
     <div>
     <h1>Browse the Ledger</h1>
@@ -10,4 +12,4 @@ function Browse() {
   );
 }
 
-export default Browse;
+export default Ledger;

@@ -1,13 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
+import Header from "./header";
 import Home from "./home_page";
 import Mine from "./mine_coin";
 import Buy from "./buy_coin";
 import Sell from "./sell_coin";
-import Browse from "./browse_ledger";
+import Ledger from "./browse_ledger";
+import Footer from "./footer";
 
 
+const contentStyle = {
+  padding: '20px 20px 20px 100px',
+  fontSize: "18px",
+};
 
 class ShintoCoinApp extends React.Component {
   constructor(props) {
@@ -22,86 +28,44 @@ class ShintoCoinApp extends React.Component {
   }
 
   transactioneer = (event, type, change) => {
-    event.preventDefault();
-    // console.log(`transactioneer`);
-    // console.log(`transaction type : ${type}`);
-    // console.log(`transaction change : ${change}`);
+    
+    let newState = Object.assign(this.state);
 
-    
-    console.log(`transactioneer`);
-    
-    let transaction = {type:'',amount:'',value:''};
-    
-    switch (type) {
-      case 'buy':
-        // code block
-        console.log(`buying`);
-        transaction.type='b';
-        transaction.amount=change;
-        transaction.value=this.state.sellprice;
-        break;
-      case 'mine':
-        // code block
-        console.log(`buying`);
-        transaction.type='m';
-        transaction.amount=change;
-        transaction.value=this.state.sellprice;
-        break;
-      case 'sell':
-        // code block
-        console.log(`buying`);
-        transaction.type='s';
-        transaction.amount=(0-change);
-        transaction.value=this.state.sellprice;
-        break;
-      default:
-    }
-   
-    console.log('* * * * *');  
-    console.log(transaction);  
-    console.log('* * * * *');
-    this.state.transactions.push(transaction);
-    this.render();
+    /* Update the number of coins held based on transaction. */
+    newState.numCoinsOwned = newState.numCoinsOwned + change;
+
+    /* Adjust users dollar balance. */
+    newState.numDollars = newState.numDollars - (change * newState.buyprice);
+
+    /* Add transaction to ledger. */
+    newState.transactions.push({ transId: Date.now(), type: type, amount: change, value: this.state.sellprice });
+
+    /* Adjust value of ShintoCoin based on amount of coin bought or sold. */
+    newState.buyprice = newState.buyprice + change;
+    newState.sellprice = newState.sellprice + change;
+
+    this.setState(newState);
   }
 
   render() {
-
     console.log(this.state.transactions);
     return (
       <Router>
-      <div>
-        <img src="./img/applogo.png" alt="logo"/>
-        <ul>
-          <li><Link to="/home">Home</Link></li>
-          <li><Link to="/buy">Buy Coins</Link></li>
-          <li><Link to="/mine">Mine Coins</Link></li>
-          <li><Link to="/sell">Sell Coins</Link></li>
-          <li><Link to="/ledger">Browse Ledger</Link></li>
-        </ul>
-
-        <hr />
-
-        <Route exact path="/" component={Home} />
-        <Route path="/home" component={Home} />
-        <Route
-        path="/mine"
-        render={(props) =><Mine {...props} numCoinsOwned={this.state.numCoinsOwned} transactioneer={this.transactioneer} />      }    
-        />
-        <Route 
-        path="/buy" 
-        render={(props) =><Buy {...props} sellprice={this.state.sellprice} numCoinsOwned={this.state.numCoinsOwned} transactioneer={this.transactioneer} />      }    
-        />
-        <Route
-        path="/sell"
-        render={(props) =><Sell {...props} buyprice={this.state.buyprice} numCoinsOwned={this.state.numCoinsOwned} transactioneer={this.transactioneer} />      }    
-        />
-        <Route path="/ledger" component={Browse} />
-      </div>
-    </Router>
+        <div>
+        <Header/>
+          <div style={contentStyle}>
+            <Route exact path="/" component={Home} />
+            <Route path="/home" component={Home} />
+            <Route path="/mine" render={(props) =><Mine {...props} data={this.state} transactioneer={this.transactioneer} />}/>
+            <Route path="/buy" render={(props) =><Buy {...props} data={this.state} transactioneer={this.transactioneer} />}/>
+            <Route path="/sell" render={(props) =><Sell {...props} data={this.state} transactioneer={this.transactioneer} />}/>
+            <Route path="/ledger" render={(props) =><Ledger {...props} data={this.state} transactioneer={this.transactioneer} />}/>
+          </div>
+          </div>
+        <Footer/>
+      </Router>
     );
   }
 }
-/*
-        <Route path="/buy" component={Buy}/>
-*/
+
 export default ShintoCoinApp;

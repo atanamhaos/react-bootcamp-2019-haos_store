@@ -4,70 +4,78 @@ class Trade extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {field:'',};
+        this.state = { field: 1, };
     }
 
 
     handleFieldEvent = (e) => {
-        this.setState({
-            'field': e.target.value
-        })
+        this.setState({ 'field': e.target.value });
     }
-
 
     handleSubmit = (event) => {
         event.preventDefault();
-        let valueChange = 0;
-        if (this.props.action === 'mine' || this.props.action === 'buy') {
-            valueChange = this.state.field;
-        } else if (this.props.action === 'sell') {
-             valueChange = 0 - this.state.field;
+        let change = parseInt(this.state.field, 10);
+        if (this.props.action === 'sell') {
+            /* Sell transactions are a negative change. */
+            change = 0 - change;
         }
-        
-        this.props.transactioneer(event, this.props.action, valueChange);
-        /* reset state */
-        this.setState({field:'',});
+
+        //if ()
+        if (this.props.props.numCoinsOwned + change < 0){
+            alert('You do not have enough coins for that sale!');
+        } else {
+            this.props.transactioneer(event, this.props.action, change);
+        }
+        /* reset component state */
+        this.setState({ field: 1, });
     }
 
     render() {
-        const ActionCopy = (props) => {
-            let trader_info = '';
 
+        const ActionCopy = ({ props }) => {
+            let trader_info = '';
             switch (this.props.action) {
                 case 'buy':
-                    trader_info =
-                        <p>Buy a new ShintoCoins for Only :  {`$${this.props.sellprice}.00`}<br></br>
-                        Number of ShintoCoins Owned : {this.props.numCoinsOwned}</p>
+                    console.log();
+                    trader_info = <p>
+                    Buy a New ShintoCoin for Only :  {`$${props.sellprice}.00`}<br></br>
+                    Positionable Financial Liquidity : {`$${props.numDollars}.00`}<br></br>
+                    Your Realized ShintoCoin Asset : {props.numCoinsOwned}<br></br>
+                    </p>;
                     break;
                 case 'mine':
-                    trader_info =
-                        <p>Number of ShintoCoins Owned : {this.props.numCoinsOwned}</p>
+                    trader_info = <p>
+                    Your Realized ShintoCoin Asset : {props.numCoinsOwned}
+                    </p>;
                     break;
                 case 'sell':
-                    trader_info =
-                        <p>Amount Paid for old ShintoCoin :  {`$${this.props.buyprice}.00`}<br></br>
-                        Number of ShintoCoins Owned : {this.props.numCoinsOwned}</p>
+                    trader_info = <p>
+                    Offers for One Old ShintoCoin :  {`$${props.buyprice}.00`}<br></br>
+                    Positionable Financial Liquidity : {`$${props.numDollars}.00`}<br></br>
+                    Your Realized ShintoCoin Asset : {props.numCoinsOwned}
+                    </p>;
                     break;
                 default:
-                    trader_info = <p>error!</p>
+                    trader_info = <p>
+                error!
+                </p>;
             }
 
             return (
                 <div>
-                {trader_info}
-                </div>
+            {trader_info}
+            </div>
             );
         };
-
-       return (
-            <div>
-            <ActionCopy/>
-            <form onSubmit={this.handleSubmit}>
-           
-            <input type="number" name="descriptionOfWork" onChange={this.handleFieldEvent} value={this.state.field} />
+        //console.log(this.props);
+        return (
+        <div>
+          <ActionCopy props={this.props.props}/>
+          <form onSubmit={this.handleSubmit}>
+            <input type="number" name="descriptionOfWork" onChange={this.handleFieldEvent} value={this.state.field}/>
             <input type="submit" value={this.props.action}></input>
-            </form>
-            </div>
+          </form>
+        </div>
         );
     }
 }
