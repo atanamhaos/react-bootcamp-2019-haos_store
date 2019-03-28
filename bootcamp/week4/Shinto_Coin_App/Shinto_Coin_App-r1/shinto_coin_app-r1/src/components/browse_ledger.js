@@ -6,7 +6,6 @@ function Browse() {
     <h1>Browse the Ledger</h1>
       <h2>View all the ShintoCoin Transactions you have enjoyed.</h2>
     <p></p>
-
     </div>
   );
 }
