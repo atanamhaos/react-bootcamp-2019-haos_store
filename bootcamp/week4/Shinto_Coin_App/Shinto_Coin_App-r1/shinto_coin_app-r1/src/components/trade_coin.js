@@ -7,7 +7,6 @@ class Trade extends React.Component {
         this.state = { field: 1, };
     }
 
-
     handleFieldEvent = (e) => {
         this.setState({ 'field': e.target.value });
     }
@@ -20,7 +19,6 @@ class Trade extends React.Component {
             change = 0 - change;
         }
 
-        //if ()
         if (this.props.props.numCoinsOwned + change < 0){
             alert('You do not have enough coins for that sale!');
         } else {
@@ -67,7 +65,6 @@ class Trade extends React.Component {
             </div>
             );
         };
-        //console.log(this.props);
         return (
         <div>
           <ActionCopy props={this.props.props}/>
