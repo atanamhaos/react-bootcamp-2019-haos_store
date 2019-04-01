@@ -1,5 +1,8 @@
 # Product Manager Project
 
+* [Product Manager Project | react-bootcamp-2019-haos_store](https://atanamhaos.github.io/react-bootcamp-2019-haos_store/bootcamp/week4/Product_Manager_Project/)
+* [react-bootcamp-2019-haos_store/bootcamp/week4/Product_Manager_Project at master · atanamhaos/react-bootcamp-2019-haos_store](https://github.com/atanamhaos/react-bootcamp-2019-haos_store/tree/master/bootcamp/week4/Product_Manager_Project)
+
 !['high level wireframe view of project'](./img/high_level_view.png)
 
 # Requirements
@@ -69,6 +72,7 @@
 * uploading of images supported
 * Administrator/creator/viewer views
 * Login
+* Keyword Search
 
 ## Notable
 
