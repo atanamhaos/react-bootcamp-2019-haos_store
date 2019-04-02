@@ -11,7 +11,10 @@ class PPM extends React.Component {
   constructor(props){
       super(props);
       this.state={
-          products:{},
+          products:{
+               111:{imageurl:'',price:'12.34',title:'Test Product 1'},
+               222:{imageurl:'',price:'43.12',title:'Test Product 2'},
+          },
       };
   }
   
@@ -36,7 +39,7 @@ class PPM extends React.Component {
         let newState = {...this.state};
         newState.products[newProductsId] = productToAdd;
         this.setState(newState);
-        console.log(this.state);
+        //console.log(this.state);
         //event.preventDefault();
         //window.location.pathname='/products';
     }
@@ -52,7 +55,7 @@ class PPM extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+    //console.log(this.state);
     return (
       <Router>
         <div id='appinner'>

@@ -4,11 +4,26 @@ class List extends React.Component {
 
   render() {
     const ProductList = () => {
+      console.log('ProductList() starts');
+      let productsForList = [this.props.products.products];
+      console.log(productsForList);
+      console.log(productsForList.length);
       
-      Object.keys(this.props.products).map((key, index, array)=>{
-        console.log(key);
-        //return ();
-      })
+      
+      //console.log(this.props.products);
+      //console.log(Object.keys(this.props.products.products));
+      //console.log(productsForList);
+      
+      // productsForList.map((product, index)=>{
+      //   console.log(product);
+      //   console.log('* * * * * ');
+      //   //return ();
+      // })
+      
+      //Object.keys(this.props.products).map((key, index, array)=>{
+      //   console.log(key);
+      //   //return ();
+      // })
       
       return (
         <div id='productListItem'>{}</div>
@@ -25,8 +40,6 @@ class List extends React.Component {
 }
 
 export default List;
-
-
 /*
           <div style={contentStyle}>
             <Route exact path="/" component={Home} />
