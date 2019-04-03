@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
+
 import { deleteTask } from './../redux';
 
 const TaskList = (props) => {
