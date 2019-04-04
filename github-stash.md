@@ -1,4 +1,4 @@
-MELISSA SCHULTZ - creativedarkness
+Melissa Schultz - creativedarkness
 * [creativedarkness (Missy Schultz)](https://github.com/creativedarkness)
 
 Yoseph Sarsour - sar06
@@ -21,3 +21,5 @@ Swapna Ramadas Shanthi - SwapnaShanthi
 
 Durga Achanta - durgaachanta
 * [durgaachanta](https://github.com/durgaachanta)
+
+Speros Misirlakis

@@ -8,8 +8,7 @@ PROJECT_NAME="people_search-r1"
 # Run create react app and install redux
 npx create-react-app $PROJECT_NAME
 cd $PROJECT_NAME
-npm install --save redux react-redux
-
+npm install --save redux react-redux react-router react-router-dom
 
 # ToDo : Delete contents of src and public folders and write new files.
 
