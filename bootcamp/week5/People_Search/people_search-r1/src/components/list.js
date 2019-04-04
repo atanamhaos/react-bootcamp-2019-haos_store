@@ -1,26 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 
 const List = ({ persons, queryString }) => {
 
-    // let idToDetails = window.location.pathname.substring(1);
-    // let personToDetail;
-    // for (let i = 0; i < persons.length; i++) {
-    //     if (parseInt(idToDetails, 10) === parseInt(persons[i].id, 10)) {
-    //         personToDetail = persons[i];
-    //     }
-    // }
-    //console.log('List Component, queryString : ',queryString);
-    //console.log('List Component, persons : ',persons);
-    
-    const queryHits = persons.map((person,index)=>{
-        console.log(queryString);
-        console.log(person.name);
+    const queryHits = persons.map((person, index) => {
+        // If we have a match of name and query or the query string is empty
+        if (person.name.toUpperCase().includes(queryString.toUpperCase()) || queryString === '') {
+            // Create and return a link routing to the details using the ID.
+            return <li key={person.id}><Link to={'/' + person.id}>{person.name}</Link></li>;
+        } else {
+            return null; // This eliminates a warning.
+        }
     });
-    
+
     return (
-      <div className="list">
-      <ul>The List</ul>
+        <div className="list">
+        <ul>
+          {queryHits}
+        </ul>
       </div>
     );
 };
@@ -30,9 +28,6 @@ const mapStateToProps = (state) => ({
     queryString: state.queryString,
 });
 
-const mapDispatchToProps = (dispatch) => ({});
-
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
 )(List);
