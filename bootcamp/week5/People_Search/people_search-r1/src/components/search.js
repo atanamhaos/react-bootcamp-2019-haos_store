@@ -1,11 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
+import Query from './query';
+import List from './list';
 //import PSA from './components/people_search_app';
 
 const Search = ({ persons }) => {
     return (
       <div className="search">
       <p>search</p>
+      <Query/>
+      <List/>
       </div>
     );
 };

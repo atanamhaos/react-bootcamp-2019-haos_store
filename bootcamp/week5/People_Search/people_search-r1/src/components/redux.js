@@ -1,12 +1,17 @@
 import { createStore } from 'redux';
 
-// ACTIONS
+// ACTION
 export const viewId = () => ({
     type: 'VIEW_PERSON_BY_ID',
 });
-// ACTIONS
-export const searchList = () => ({
-    type: 'SEARCH_LIST',
+
+export const updateQuery = (queryString) => ({
+    type: 'UPDATE_QUERY',
+    queryString
+});
+
+export const queryList = () => ({
+    type: 'QUERY_LIST',
 });
 
 // REDUCERS
@@ -15,12 +20,27 @@ export const reducers = (state = initialState, action) => {
     switch (action.type) {
 
         case 'VIEW_PERSON_BY_ID':
+            console.log('');
             return state;
 
-        case 'SEARCH_LIST':
+        case 'UPDATE_QUERY':
+            console.log('UPDATE_QUERY');
+            console.log('state :', state);
+            console.log('action :', action);
+            let updatedStatesQueryString = { ...state };
+            updatedStatesQueryString.queryString = action.queryString;
+
+            //return updateNewTaskState;
+            return updatedStatesQueryString;
+
+        case 'QUERY_LIST':
+            console.log('user needs to click one of the choices!!');
             return state;
 
         default:
+            console.log('Default action');
+            console.log('state :', state);
+            console.log('action :', action);
             return state;
     }
 };
@@ -40,11 +60,13 @@ const initialState = {
         { id: '009', name: 'Benjamin Haos', city: 'Milwaukee, Harambre', industry: 'Software Scientist', hobbies: 'creation', email: '@northwesternmutal.com' },
         { id: '010', name: 'Speros Misirlakis', city: 'Arizona City', industry: 'IT Instruction', hobbies: 'teaching, coding', email: '@codingdojo' },
     ],
+    queryHits:[],
+    queryString: '',
 };
 
 // STORE
 export function configureStore(initialState) { // initialState = initialState | {}
-    const store = createStore(reducers, initialState);
+    const store = createStore(reducers, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
     return store;
 }
 
