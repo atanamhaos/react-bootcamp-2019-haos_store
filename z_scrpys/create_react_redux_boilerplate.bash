@@ -3,7 +3,7 @@
 CURRENT_DIR=$PWD
 
 # ToDo : check for passed in project name to use and if none found prompt for it.
-PROJECT_NAME="people_search-r1"
+PROJECT_NAME="dojo_dossier-r1"
 
 # Run create react app and install redux
 npx create-react-app $PROJECT_NAME
