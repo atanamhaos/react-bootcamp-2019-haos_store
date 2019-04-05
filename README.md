@@ -19,9 +19,19 @@ command -v nvm
 **Restart terminal**
 
 ```
+# Install more current version of node
 nvm install 10.15.3
+# Make sure it is being used
 nvm use 10.15.3
+# Set it as default
 nvm alias default node
+# Install nodemon globally for use with express server
+npm install -g nodemon
+```
+Setup for Express Server
+
+```
+npm install express --save
 ```
 
 ```
