@@ -11,14 +11,22 @@ export const addTab = () => {
 })};
 
 export const selectTab = ({id}) => {
-    //console.log('selectTab(...) selectedTabsId : ',id);
     return ({
     type: 'SELECT_TAB',
     selectedTabsId:id,
 })};
 
+export const updateAddDetailField = (fieldValue) => ({
+    type: 'UPDATE_DETAIL_ADD_FIELD',
+    fieldValue,
+});
+
+export const addDetail = () => {
+    return ({
+    type: 'ADD_DETAIL',
+})};
+
 export const reducers = (state = initialState, action) => {
-    //console.log('reducers!');
     switch (action.type) {
 
         case 'UPDATE_TAB_ADD_FIELD':
@@ -28,20 +36,42 @@ export const reducers = (state = initialState, action) => {
             return updatedStatesAddTabField;
 
         case 'ADD_TAB':
-            //console.log('dispatch ADD_TAB');
-            //console.log(state);
             let addTabReducersNewState = {...state};
             let nextId = addTabReducersNewState.persons.length + 1;
-            let newPerson = {id:nextId, name:addTabReducersNewState.addTabField, listdata:{}};
+            let newPerson = {id:nextId, name:addTabReducersNewState.addTabField, listdata:[]};
             addTabReducersNewState.persons.push(newPerson);
             addTabReducersNewState.addTabField = '';
             return addTabReducersNewState;
 
         case 'SELECT_TAB':
-            //console.log('SELECT_TAB, selectedTabsId : ',action.selectedTabsId);
             let selectTabsNewState = {...state};
             selectTabsNewState.selectedTab = action.selectedTabsId;
+            // Reset the detail field if user switched to different tab.
+            if(selectTabsNewState.selectedTab !== state.selectedTab){
+                selectTabsNewState.addDetailField = '';
+            }
             return selectTabsNewState;
+
+        case 'UPDATE_DETAIL_ADD_FIELD':
+            let updatedStatesAddDetailField = { ...state };
+            updatedStatesAddDetailField.addDetailField = action.fieldValue;
+            return updatedStatesAddDetailField;
+
+        case 'ADD_DETAIL':
+            let addDetailReducersNewState = {...state};
+            
+            // ToDo : Assign these to variables so it is more understandable.
+            // This gets the person/tab's list data.
+            //console.log(addDetailReducersNewState.persons[parseInt(addDetailReducersNewState.selectedTab,10)-1].listdata);
+            // This gets the field value entered.
+            //console.log(addDetailReducersNewState.addDetailField);            
+            
+            // This puts the two above together.
+            addDetailReducersNewState.persons[parseInt(addDetailReducersNewState.selectedTab,10)-1].listdata.push(addDetailReducersNewState.addDetailField);
+            // Reset the field.
+            addDetailReducersNewState.addDetailField = '';
+            
+            return addDetailReducersNewState;
         
         default:
             console.log('hit default!');
@@ -64,8 +94,10 @@ const initialState = {
         { id: '010', name: 'Speros', listdata: ['teaching', 'coding', 'entrepreneurship', 'hiking',], },
     ],
     addTabField: '',
+    addDetailField: '',
     selectedTab:'000',
 };
+
 // STORE
 export function configureStore(initialState) {
     const store = createStore(reducers, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

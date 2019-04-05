@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
 
-const Details = ({ persons }) => {
+import { updateAddDetailField } from "./redux";
+import { addDetail } from "./redux";
 
-    // The tail of the URL is the ID of the person to show. 
-    let idToDetails = window.location.pathname.substring(1);
-    // This we need to know.
+const Details = ({ persons, selectedTab, addDetailField, updateAddDetailField, addDetail }) => {
+
+    let idToDetails = selectedTab;
+    // This is what we need to know.
     let personToDetail;
-
-    // Look through the hole list
+    // Look threw the hole list
     for (let i = 0; i < persons.length; i++) {
         if (parseInt(idToDetails, 10) === parseInt(persons[i].id, 10)) {
             personToDetail = persons[i];
@@ -17,23 +17,53 @@ const Details = ({ persons }) => {
         }
     }
 
+    function showTab(selectedTab) {
+        // If user has selected a tab - STARTS
+        if (selectedTab > 0) {
+            // Create list
+            let list = personToDetail.listdata.map((listitem, index) => {
+                return <li key={index}>{listitem}</li>;
+            });
+            
+            // Return panel with list of details and a input field to add new details to the store.
+            return (
+                <div><br></br>
+                  <h1>{personToDetail.name}</h1>
+                  <ul>{list}</ul><br></br>
+                  <form onSubmit={(event) =>{event.preventDefault();addDetail();}}>
+                    <label>Add Detail : &nbsp;  &nbsp;</label>
+                    <input  value={addDetailField}
+                            onChange={(event) => {updateAddDetailField(event.target.value);}}
+                    />
+                 </form>
+                </div>
+            );
+        } // If user has selected a tab - ENDS
+        else { // If there is no person/tab selected.
+            return (<div></div>);
+        }
+    }
     return (
         <div className="details">
-        <h1>           {personToDetail.name}     </h1>
-        <h2>City :     {personToDetail.city}     </h2>
-        <h2>Industry : {personToDetail.industry} </h2>
-        <h2>Hobbies :  {personToDetail.hobbies}  </h2>
-        <h2>Email :    {personToDetail.email}    </h2>
         <br></br>
-        <h3><Link to={'/'}>bACK</Link></h3>
+        {showTab(selectedTab)}
       </div>
     );
 };
 
+
 const mapStateToProps = (state) => ({
     persons: state.persons,
+    selectedTab: state.selectedTab,
+    addDetailField: state.addDetailField,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    updateAddDetailField: (fieldValue) => dispatch(updateAddDetailField(fieldValue)),
+    addDetail: (newDetailToAdd) => dispatch(addDetail(newDetailToAdd)),
 });
 
 export default connect(
     mapStateToProps,
+    mapDispatchToProps,
 )(Details);
