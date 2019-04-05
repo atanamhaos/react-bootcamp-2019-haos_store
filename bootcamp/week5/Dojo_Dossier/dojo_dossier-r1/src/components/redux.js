@@ -1,4 +1,5 @@
 import { createStore } from 'redux';
+import axios from 'axios';
 
 export const updateAddTabField = (fieldValue) => ({
     type: 'UPDATE_TAB_ADD_FIELD',
@@ -7,14 +8,16 @@ export const updateAddTabField = (fieldValue) => ({
 
 export const addTab = () => {
     return ({
-    type: 'ADD_TAB',
-})};
+        type: 'ADD_TAB',
+    })
+};
 
-export const selectTab = ({id}) => {
+export const selectTab = ({ id }) => {
     return ({
-    type: 'SELECT_TAB',
-    selectedTabsId:id,
-})};
+        type: 'SELECT_TAB',
+        selectedTabsId: id,
+    })
+};
 
 export const updateAddDetailField = (fieldValue) => ({
     type: 'UPDATE_DETAIL_ADD_FIELD',
@@ -23,8 +26,36 @@ export const updateAddDetailField = (fieldValue) => ({
 
 export const addDetail = () => {
     return ({
-    type: 'ADD_DETAIL',
-})};
+        type: 'ADD_DETAIL',
+    })
+};
+
+
+
+
+
+
+
+
+
+function callExpressServer() {
+    console.log('testing API');
+    let testurl = 'https://bootcamp-express-server-benjaminhaos.c9users.io:8080/';
+    axios.get(testurl)
+        .then(function(response) {
+            console.log(response);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+}
+
+
+
+
+
+
+
 
 export const reducers = (state = initialState, action) => {
     switch (action.type) {
@@ -33,21 +64,26 @@ export const reducers = (state = initialState, action) => {
             let updatedStatesAddTabField = { ...state };
             updatedStatesAddTabField.addTabField = action.fieldValue;
 
+
+            callExpressServer();
+
+
             return updatedStatesAddTabField;
 
         case 'ADD_TAB':
-            let addTabReducersNewState = {...state};
+            let addTabReducersNewState = { ...state };
             let nextId = addTabReducersNewState.persons.length + 1;
-            let newPerson = {id:nextId, name:addTabReducersNewState.addTabField, listdata:[]};
+            let newPerson = { id: nextId, name: addTabReducersNewState.addTabField, listdata: [] };
             addTabReducersNewState.persons.push(newPerson);
             addTabReducersNewState.addTabField = '';
+
             return addTabReducersNewState;
 
         case 'SELECT_TAB':
-            let selectTabsNewState = {...state};
+            let selectTabsNewState = { ...state };
             selectTabsNewState.selectedTab = action.selectedTabsId;
             // Reset the detail field if user switched to different tab.
-            if(selectTabsNewState.selectedTab !== state.selectedTab){
+            if (selectTabsNewState.selectedTab !== state.selectedTab) {
                 selectTabsNewState.addDetailField = '';
             }
             return selectTabsNewState;
@@ -58,21 +94,21 @@ export const reducers = (state = initialState, action) => {
             return updatedStatesAddDetailField;
 
         case 'ADD_DETAIL':
-            let addDetailReducersNewState = {...state};
-            
+            let addDetailReducersNewState = { ...state };
+
             // ToDo : Assign these to variables so it is more understandable.
             // This gets the person/tab's list data.
             //console.log(addDetailReducersNewState.persons[parseInt(addDetailReducersNewState.selectedTab,10)-1].listdata);
             // This gets the field value entered.
             //console.log(addDetailReducersNewState.addDetailField);            
-            
+
             // This puts the two above together.
-            addDetailReducersNewState.persons[parseInt(addDetailReducersNewState.selectedTab,10)-1].listdata.push(addDetailReducersNewState.addDetailField);
+            addDetailReducersNewState.persons[parseInt(addDetailReducersNewState.selectedTab, 10) - 1].listdata.push(addDetailReducersNewState.addDetailField);
             // Reset the field.
             addDetailReducersNewState.addDetailField = '';
-            
+
             return addDetailReducersNewState;
-        
+
         default:
             console.log('hit default!');
             return state;
@@ -90,12 +126,12 @@ const initialState = {
         { id: '006', name: 'Zachary', listdata: ['baseball', ' frugality'], },
         { id: '007', name: 'Swapna', listdata: ['child rearing'], },
         { id: '008', name: 'Durga', listdata: ['child rearing, child creation, electronics'], },
-        { id: '009', name: 'Benjamin', listdata: ['creation', 'electronics', 'hacking',], },
-        { id: '010', name: 'Speros', listdata: ['teaching', 'coding', 'entrepreneurship', 'hiking',], },
+        { id: '009', name: 'Benjamin', listdata: ['creation', 'electronics', 'hacking', ], },
+        { id: '010', name: 'Speros', listdata: ['teaching', 'coding', 'entrepreneurship', 'hiking', ], },
     ],
     addTabField: '',
     addDetailField: '',
-    selectedTab:'000',
+    selectedTab: '000',
 };
 
 // STORE
