@@ -67,14 +67,14 @@ const Tabs = ({ persons, addTab, newtabfield, updateAddTabField, selectTab }) =>
         display: 'none', // Hidden by default 
         position: 'fixed', // Stay in place 
         zIndex: '1', // Sit on top 
-        paddingTop: '100px', // Location of the box 
+        //paddingTop: '100px', // Location of the box 
         left: 0,
         top: 0,
         width: '100%', // Full width
-        height: '100%', // Full height 
+        //height: '100%', // Full height 
         overflow: 'auto', // Enable scroll if needed 
         backgroundColor: 'rgb(0,0,0)', // Fallback color
-        backgroundColor: 'rgba(0,0,0,0.4)', // Black w/ opacity
+        backgroundColor: 'rgba(0,0,0,0.7)', // Black w/ opacity
     };
     /* Modal Content Style*/
     const modalcontentstyle = {
@@ -91,6 +91,12 @@ const Tabs = ({ persons, addTab, newtabfield, updateAddTabField, selectTab }) =>
         fontSize: '28px',
         fontWeight: 'bold',
     };
+    
+    const modelinputstyle = {
+        width: '90%',
+        fontSize:'larger',
+        //height: '50%', // Full height 
+    }
     // This bit makes the model work, if you want to call it that...
     function activatemodal() {
         // This, and the model element below were grabbed from some forgotten tutorial and made/hacked to work...
@@ -115,7 +121,6 @@ const Tabs = ({ persons, addTab, newtabfield, updateAddTabField, selectTab }) =>
     }
 
 
-
     return (
         <div className="navtabs">
           {tabs}
@@ -131,8 +136,8 @@ const Tabs = ({ persons, addTab, newtabfield, updateAddTabField, selectTab }) =>
                   //var span = document.getElementById("modelclose");
                   var modal = document.getElementById('myModal');
                   modal.style.display = "none";
-                  }}>
-                <input value={newtabfield} onChange={(event) => {updateAddTabField(event.target.value)}}/>
+                  }}><h1 style={{color:'white'}}>NEW TAB NAME</h1>
+                <input style={modelinputstyle} value={newtabfield} onChange={(event) => {updateAddTabField(event.target.value)}}/>
               </form>
             </div>
           </div>

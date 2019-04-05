@@ -17,6 +17,11 @@ const Details = ({ persons, selectedTab, addDetailField, updateAddDetailField, a
         }
     }
 
+    const showtabstyle =  {
+        border:'5px solid green',
+        padding:'0px 10px 20px 30px',
+    }
+    
     function showTab(selectedTab) {
         // If user has selected a tab - STARTS
         if (selectedTab > 0) {
@@ -24,18 +29,20 @@ const Details = ({ persons, selectedTab, addDetailField, updateAddDetailField, a
             let list = personToDetail.listdata.map((listitem, index) => {
                 return <li key={index}>{listitem}</li>;
             });
-            
             // Return panel with list of details and a input field to add new details to the store.
             return (
                 <div><br></br>
-                  <h1>{personToDetail.name}</h1>
-                  <ul>{list}</ul><br></br>
-                  <form onSubmit={(event) =>{event.preventDefault();addDetail();}}>
-                    <label>Add Detail : &nbsp;  &nbsp;</label>
-                    <input  value={addDetailField}
-                            onChange={(event) => {updateAddDetailField(event.target.value);}}
-                    />
-                 </form>
+                  <br></br>
+                  <div style={showtabstyle}>
+                    <h1>{personToDetail.name}</h1>
+                    <ul>{list}</ul><br></br>
+                    <form onSubmit={(event) =>{event.preventDefault();addDetail();}}>
+                      <label>Add Detail : &nbsp;  &nbsp;</label>
+                      <input  value={addDetailField}
+                              onChange={(event) => {updateAddDetailField(event.target.value);}}
+                      />
+                    </form>
+                  </div>
                 </div>
             );
         } // If user has selected a tab - ENDS
