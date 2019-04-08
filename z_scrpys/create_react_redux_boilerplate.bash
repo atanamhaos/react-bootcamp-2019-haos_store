@@ -21,8 +21,8 @@ npm install --save redux react-redux react-router react-router-dom babel-polyfil
 
 # ToDo : Delete contents of src and public folders and write new files.
 
-rm -rf /src/*
-rm -rf /public/*
+rm -rf $PWD/src/*
+rm -rf $PWD/public/*
 
 # Return shell curser to directory script was run from.
 cd $CURRENT_DIR
