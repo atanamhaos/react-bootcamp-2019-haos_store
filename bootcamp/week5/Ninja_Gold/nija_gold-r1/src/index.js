@@ -4,8 +4,8 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
-import rootReducer from "./rootReducer";
-import GoldGetOptions from "./components/GoldGetOptions";
+import rootReducer from "./reducers/rootReducer";
+import Options from "./components/Options";
 import Bank from "./components/Bank";
 import Record from "./components/Record";
 
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <Bank />
-      <GoldGetOptions />
+      <Options />
       <Record />
     </div>
   );

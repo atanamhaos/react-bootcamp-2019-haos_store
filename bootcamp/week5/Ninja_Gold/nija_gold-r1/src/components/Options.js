@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchGold } from "./../productActions";
+import { fetchGold } from "./../actions/fetchGold";
 
-class GoldList extends React.Component {
+class Options extends React.Component {
 
   render() {
 
@@ -37,4 +37,4 @@ const mapStateToProps = state => {
   return ({});
 };
 
-export default connect(mapStateToProps)(GoldList);
+export default connect(mapStateToProps)(Options);

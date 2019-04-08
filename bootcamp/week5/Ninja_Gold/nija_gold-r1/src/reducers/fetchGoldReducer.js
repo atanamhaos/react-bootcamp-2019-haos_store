@@ -3,7 +3,7 @@ import {
   FETCH_GOLD_SUCCESS,
   FETCH_GOLD_FAILURE
 }
-from "./productActions";
+from "./../actions/fetchGold";
 
 const initialState = {
   bank: 0,
@@ -12,7 +12,7 @@ const initialState = {
   error: null
 };
 
-export default function productReducer(
+export default function fetchGoldReducer(
   state = initialState,
   action
 ) {

@@ -6,13 +6,17 @@ class Record extends React.Component {
   render() {
 
     let recordlist = this.props.list.map((record, index) => { return (<li key={index}>{record}</li>) });
-
+    
+    let recordsListStyle = {
+      listStyleType:'none',
+    };
+    
     return (
       <div>
-      <h1>RECORD:</h1>
-      <ul>
-      {recordlist}
-      </ul>
+        <h1>RECORD:</h1>
+        <ul style={recordsListStyle}>
+          {recordlist}
+        </ul>
       </div>
     );
   }
@@ -20,9 +24,9 @@ class Record extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-    list: state.products.activities,
-    loading: state.products.loading,
-    error: state.products.error
+    list: state.app.activities,
+    loading: state.app.loading,
+    error: state.app.error
   });
 };
 

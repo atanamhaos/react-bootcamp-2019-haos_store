@@ -5,9 +5,20 @@ class Bank extends React.Component {
 
   render() {
     const { bank } = this.props;
-
+    let bankstyle;
+    
+    if (bank < 0){
+      bankstyle = {
+        color:'red',
+      };
+    } else {
+      bankstyle = {
+        color:'black',
+      };
+    }
+    
     return (
-      <ul><h1>BANK: {bank}</h1></ul>
+      <ul><h1 style={bankstyle}>BANK: {bank}</h1></ul>
     );
   }
 }
@@ -15,9 +26,9 @@ class Bank extends React.Component {
 const mapStateToProps = state => {
 
   return ({
-    bank: state.products.bank,
-    loading: state.products.loading,
-    error: state.products.error
+    bank: state.app.bank,
+    loading: state.app.loading,
+    error: state.app.error
   });
 };
 

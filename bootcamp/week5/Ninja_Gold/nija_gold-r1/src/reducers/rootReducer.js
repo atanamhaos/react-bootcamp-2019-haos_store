@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import products from "./productReducer";
+import app from "./fetchGoldReducer";
 
 export default combineReducers({
-    products
+    app
 });
