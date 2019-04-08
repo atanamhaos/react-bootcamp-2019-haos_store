@@ -74,6 +74,7 @@ const Tabs = ({ persons, addTab, newtabfield, updateAddTabField, selectTab }) =>
         //height: '100%', // Full height 
         overflow: 'auto', // Enable scroll if needed 
         backgroundColor: 'rgb(0,0,0)', // Fallback color
+        // eslint-disable-next-line
         backgroundColor: 'rgba(0,0,0,0.7)', // Black w/ opacity
     };
     /* Modal Content Style*/

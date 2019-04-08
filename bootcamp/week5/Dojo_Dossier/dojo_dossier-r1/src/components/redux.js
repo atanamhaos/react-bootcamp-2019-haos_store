@@ -1,5 +1,4 @@
-import { createStore } from 'redux';
-import axios from 'axios';
+import { createStore, } from 'redux';
 
 export const updateAddTabField = (fieldValue) => ({
     type: 'UPDATE_TAB_ADD_FIELD',
@@ -9,14 +8,14 @@ export const updateAddTabField = (fieldValue) => ({
 export const addTab = () => {
     return ({
         type: 'ADD_TAB',
-    })
+    });
 };
 
 export const selectTab = ({ id }) => {
     return ({
         type: 'SELECT_TAB',
         selectedTabsId: id,
-    })
+    });
 };
 
 export const updateAddDetailField = (fieldValue) => ({
@@ -27,34 +26,8 @@ export const updateAddDetailField = (fieldValue) => ({
 export const addDetail = () => {
     return ({
         type: 'ADD_DETAIL',
-    })
+    });
 };
-
-
-
-
-
-
-
-
-
-function callExpressServer() {
-    console.log('testing API');
-    let testurl = 'https://bootcamp-express-server-benjaminhaos.c9users.io:8080/';
-    axios.get(testurl)
-        .then(function(response) {
-            console.log(response);
-        })
-        .catch(function(error) {
-            console.log(error);
-        });
-}
-
-
-
-
-
-
 
 
 export const reducers = (state = initialState, action) => {
@@ -63,10 +36,6 @@ export const reducers = (state = initialState, action) => {
         case 'UPDATE_TAB_ADD_FIELD':
             let updatedStatesAddTabField = { ...state };
             updatedStatesAddTabField.addTabField = action.fieldValue;
-
-
-            callExpressServer();
-
 
             return updatedStatesAddTabField;
 
@@ -134,6 +103,13 @@ const initialState = {
     selectedTab: '000',
 };
 
+// const initialState = {
+//     persons: [],
+//     addTabField: '',
+//     addDetailField: '',
+//     selectedTab: '000',
+// };
+
 // STORE
 export function configureStore(initialState) {
     const store = createStore(reducers, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
@@ -141,3 +117,53 @@ export function configureStore(initialState) {
 }
 
 export const store = configureStore();
+
+
+
+/*
+ToDo:
+
+* [Where and When to Fetch Data With Redux](https://daveceddia.com/where-fetch-data-redux/)
+* [j3378m4v3y - CodeSandbox](https://codesandbox.io/s/j3378m4v3y)
+
+*/
+
+//const serverURLroot = 'https://bootcamp-express-server-benjaminhaos.c9users.io:8080/';
+
+
+// function callExpressServer() {
+//     console.log('testing API');
+//     let testurl = 'https://bootcamp-express-server-benjaminhaos.c9users.io:8080/';
+//     axios.get(testurl)
+//         .then(function(response) {
+//             console.log(response);
+//         })
+//         .catch(function(error) {
+//             console.log(error);
+//         });
+// }
+
+
+// function getInitialStateFromExpressServer(){
+//     console.log('testing API');
+//     //const serverURL = 'https://bootcamp-express-server-benjaminhaos.c9users.io:8080/';
+//     let initStateURL = `${serverURLroot}initstate/`;
+//     let initialStateResponse;
+//     axios.get(initStateURL)
+//         .then(function(response) {
+//             //console.log(response.data);
+//             initialStateResponse = response.data;
+//             console.log(initialStateResponse);
+            
+//             return initialStateResponse;
+//         })
+//         .then(function() {
+//             //console.log(response.data);
+//             //initialStateResponse = response.data;
+//         })
+//         .catch(function(error) {
+//             console.log(error);
+//         });
+    
+// }
+
