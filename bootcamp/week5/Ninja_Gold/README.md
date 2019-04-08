@@ -1,3 +1,7 @@
+# Ninja Gold
+
+* [This](https://github.com/atanamhaos/react-bootcamp-2019-haos_store/tree/master/bootcamp/week5/Ninja_Gold)
+
 Create This:
 
 ![Ninja Gold Project - Wirerame](./img/ninja_gold_wireframe.png)
