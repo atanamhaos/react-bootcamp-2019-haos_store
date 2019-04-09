@@ -13,7 +13,8 @@ let returnObject = {
         key1: 'value1',
         key2: 0,
         anotherkey: 'reallylongstringwith onlyonespace',
-        keyforobject: { objectsfirstkey: 'kwikset', objectsecondkey: 'shlage', numberofkeysobjecthas: 3 },
+        keyforobject: { objectsfirstkey: 'kwikset', objectsecondkey: 'shlage', nestedObject:{nestedkey1:'nestedvalue1', nestedkey2: 'nested value 2' }, numberofkeysobjecthas: 4 },
+        trailingkey:'wondering if this works',
     }
 };
 
