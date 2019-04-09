@@ -24,14 +24,14 @@ class FetchList extends React.Component {
 
     // ToDo: Make the indent work.
     function createHTMLListFromJSONObject(objectIn, indent) {
-      let stringIndent;
+      let stringIndent = '';
       console.log(indent);
       if (isNaN(indent)){ indent = 0;}
       if (indent > 0){
         console.log('creating indent');
         for(let i = 0; i < indent; i++){
           //stringIndent = () => {return (<span>&nbsp;&nbsp;&nbsp;</span>) };
-          stringIndent = '---'; 
+          stringIndent += '---'; 
         }
       } else {
         stringIndent = '';

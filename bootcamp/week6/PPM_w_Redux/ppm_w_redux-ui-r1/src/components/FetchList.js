@@ -21,7 +21,6 @@ class FetchList extends React.Component {
 
     console.log('FetchList, render(), this.props.data : ', data);
 
-
     // ToDo: Make the indent work.
     function createHTMLListFromJSONObject(objectIn, indent) {
       let stringIndent;
