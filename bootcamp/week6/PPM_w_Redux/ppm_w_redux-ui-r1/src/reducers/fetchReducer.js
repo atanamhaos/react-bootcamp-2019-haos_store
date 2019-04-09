@@ -6,8 +6,8 @@ import {
 
 const initialState = {
   data:{},
-  loading: false,
-  error: null
+  loading: true,
+  error: false,
 };
 
 export default function fetchReducer(
@@ -21,19 +21,23 @@ export default function fetchReducer(
       return {
         ...state,
         loading: true,
-        error: null
+        error: false,
       };
 
     case FETCH_SUCCESS:
       // All done: set loading "false".
       // Also, replace the items with the ones from the server
-      console.log('FETCH_SUCCESS, action.payload : ', action.payload.data);
-      return {
+      //console.log('FETCH_SUCCESS, action.payload : ', action.payload.data);
+      
+      let returnObject = {
         ...state,
         loading: false,
         data: action.payload.data,
+        dataconfig: action.payload.formConfig,
         error: false
       };
+      //console.log(returnObject);
+      return returnObject;
 
     case FETCH_FAILURE:
       // The request failed, but it did stop, so set loading to "false".

@@ -24,10 +24,10 @@ class FetchList extends React.Component {
     // ToDo: Make the indent work.
     function createHTMLListFromJSONObject(objectIn, indent) {
       let stringIndent;
-      console.log(indent);
+      //console.log(indent);
       if (isNaN(indent)){ indent = 0;}
       if (indent > 0){
-        console.log('creating indent');
+        //console.log('creating indent');
         for(let i = 0; i < indent; i++){
           //stringIndent = () => {return (<span>&nbsp;&nbsp;&nbsp;</span>) };
           stringIndent = '---'; 
@@ -36,13 +36,17 @@ class FetchList extends React.Component {
         stringIndent = '';
       }
       
-      return Object.keys(objectIn).map((key) => {
-        console.log(objectIn[key].constructor );
-        if (typeof objectIn[key] === "object") {
-          return (<li>{stringIndent}{key} : {createHTMLListFromJSONObject( objectIn[key], ( parseInt(indent,10)+1) ) } </li>);
+      return Object.keys(objectIn).map((keyValue,index) => {
+      //let reactKey = 0+index;
+      //if (indent) reactKey+=indent;
+      //reactKey+=key;
+      //console.log('reactKey :',reactKey);
+        //console.log(objectIn[key].constructor );
+        if (typeof objectIn[keyValue] === "object") {
+          return (<li>{stringIndent}{keyValue} : {createHTMLListFromJSONObject( objectIn[keyValue], ( parseInt(indent,10)+1) ) } </li>);
         }
         else {
-          return (<li>{stringIndent}{key} : {objectIn[key]} </li>);
+          return (<li>{stringIndent}{keyValue} : {objectIn[keyValue]} </li>);
         }
       });
     }

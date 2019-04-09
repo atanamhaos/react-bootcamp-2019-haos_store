@@ -1,16 +1,19 @@
 const APIbasrURL = 'https://bootcamp-express-server-benjaminhaos.c9users.io/';
 
 function callAPI() {
-  return fetch(APIbasrURL)
+
+  let urlToFetch = `${APIbasrURL}`;
+
+  return fetch(urlToFetch)
     .then(handleErrors)
-    .then(console.log('hi ben'))
     .then(res => res.json());
 }
 
-export function fetchData() {
+export function fetchData(fetchOption) {
+
   return dispatch => {
-    dispatch(fetchBegin());
-    return callAPI()
+    dispatch(fetchBegin(fetchOption));
+    return callAPI(fetchOption)
       .then(json => {
         dispatch(fetchSuccess(json));
         return json;
@@ -38,14 +41,14 @@ export const FETCH_FAILURE =
   "FETCH_FAILURE";
 
 export const fetchBegin = () => {
-  console.log('fetchBegin');
+  //console.log('fetchBegin');
   return ({
     type: FETCH_BEGIN
   })
 };
 
 export const fetchSuccess = json => {
-  console.log('fetchSuccess');
+  //console.log('fetchSuccess');
   return ({
     type: FETCH_SUCCESS,
     payload: json
@@ -53,7 +56,7 @@ export const fetchSuccess = json => {
 };
 
 export const fetchFailure = error => {
-  console.log('fetchFailure');
+  //console.log('fetchFailure');
   return ({
     type: FETCH_FAILURE,
     payload: { error }
