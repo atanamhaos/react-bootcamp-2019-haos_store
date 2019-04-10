@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { simpleAction } from './actions/simpleAction';
+import { simpleAction } from './../actions/simpleAction';
 
 class App extends Component {
 
