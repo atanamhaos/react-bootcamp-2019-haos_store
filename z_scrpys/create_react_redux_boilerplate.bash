@@ -19,10 +19,11 @@ cd $PROJECT_NAME
 
 npm install --save redux react-redux react-router react-router-dom babel-polyfill cross-fetch redux-thunk redux-logger prop-types
 
-# ToDo : Delete contents of src and public folders and write new files.
+# ToDo : Prompt for option of deleting contents of src and public folders and writing new files.
+# rm -rf $PWD/src/*
+# rm -rf $PWD/public/*
 
-rm -rf $PWD/src/*
-rm -rf $PWD/public/*
+# ToDo : Prompt for option of running created app.
 
 # Return shell curser to directory script was run from.
 cd $CURRENT_DIR
