@@ -16,7 +16,7 @@ sudo apt-get -y install build-essential checkinstall libssl-dev
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 command -v nvm
 ```
-**Restart terminal**
+**Restart Shell**
 
 ```
 # Install more current version of node
